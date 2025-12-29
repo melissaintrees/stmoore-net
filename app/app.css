@@ -1,14 +1,32 @@
 @import "tailwindcss";
+@source inline("bg{hover:,focus:,}underline");
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans: "PT Sans";
+  --color-watermelon: #EA1B3D;
+  --color-darkblue: #11153F;
+  --color-darklavender: #824FA0;
+  --color-lavender: #AE8FC0;
+  --color-darkred: #8B0000;
+  --color-banana: #F7A925;
 }
 
 html,
 body {
-  @apply bg-white dark:bg-gray-950;
 
+
+  .circle-icon-container {
+    display: inline-flex; /* Use flexbox for centering */
+    align-items: center;
+    justify-content: center;
+    width: 30px; /* Adjust size as needed */
+    height: 30px; /* Adjust size as needed */
+    border-radius: 50%; /* Makes it a circle */
+}
+.circle-icon-container:hover {
+  border: 1px solid #AE8FC0;
+  border-radius: 50%;
+}
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }
