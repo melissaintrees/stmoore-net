@@ -13,8 +13,7 @@
 
 html,
 body {
-
-
+  font-family: 'PT Sans',sans-serif;
   .circle-icon-container {
     display: inline-flex; /* Use flexbox for centering */
     align-items: center;
