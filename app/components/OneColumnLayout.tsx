@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "motion/react"
 
 interface OneColumnLayoutProps {
   children?: React.ReactNode;
@@ -22,6 +23,11 @@ const OneColumnLayout: React.FC<OneColumnLayoutProps> = ({
   id
 }) => {
   return (
+        <motion.div   
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1}}
+        transition={{ duration: 1, ease: "easeOut", }}
+        >
     <div className={`pt-12 pb-24 ${backgroundColor}`} id={id}>
      <div className="mx-auto max-w-2xl ">
         {/* blank space for when there is no H2 */}
@@ -41,6 +47,7 @@ const OneColumnLayout: React.FC<OneColumnLayoutProps> = ({
          </div>
       </div>
     </div>
+    </motion.div>
   );
 };
 

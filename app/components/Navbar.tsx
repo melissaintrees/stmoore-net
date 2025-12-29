@@ -2,22 +2,20 @@ import { useState } from "react";
 import { NavLink } from "react-router";
 import { FaTimes, FaBars } from "react-icons/fa";
 import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa6";
+import { motion } from "motion/react"
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const navigation = [
-    { name: "HOME", href: "#" },
-    { name: "VIDEOS", href: "#" },
-    { name: "ABOUT", href: "#" },
-    { name: "SHOW", href: "#" },
-  ];
-
- 
   const mBase = "transition text-white hover:text-lavender font-normal text-3xl";
   const mActive = "transition text-white hover:text-lavender font-normal text-3xl";
 
   return (
+     <motion.div   
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1}}
+        transition={{ duration:.7, ease: "easeOut", }}
+        >
     <header className="bg-watermelon">
       <nav className="max-w-6xl mx-auto flex items-center justify-between p-5">
         {/*left aligned nav */}
@@ -140,6 +138,7 @@ const Navbar = () => {
         </div>
       )}
     </header>
+    </motion.div>
   );
 };
 

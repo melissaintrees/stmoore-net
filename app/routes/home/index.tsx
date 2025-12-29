@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 
 import type { Route } from "./+types/index";
 import TwoColumnLayout from "~/components/TwoColumnLayout";
@@ -10,7 +9,7 @@ import { Link } from "react-router";
 import ReactPlayer from "react-player";
 import OneColumnLayout from "~/components/OneColumnLayout";
 
-// import BandcampPlayer from "~/components/BandcampPlayer";
+import { motion } from "motion/react"
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -61,6 +60,7 @@ const HomePage = () => {
           </>
         }
       />
+
       <TwoColumnLayout
         backgroundColor="bg-lavender"
         h2="Videos"

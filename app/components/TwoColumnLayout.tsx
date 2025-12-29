@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router";
+import { motion } from "motion/react"
+
 
 interface TwoColumnLayoutProps {
   leftChildren?: React.ReactNode;
@@ -18,6 +19,7 @@ interface TwoColumnLayoutProps {
 }
 
 const TwoColumnLayout: React.FC<TwoColumnLayoutProps> = ({
+  
   leftChildren,
   rightChildren,
   h2,
@@ -28,6 +30,11 @@ const TwoColumnLayout: React.FC<TwoColumnLayoutProps> = ({
   cta
 }) => {
   return (
+    <motion.div   
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1}}
+    transition={{ duration: 1, ease: "easeOut" }}
+    >
     <div className={`pt-12 pb-24 ${backgroundColor}`} id={id}>
       <div className="mx-auto max-w-2xl lg:max-w-7xl ">
         {/* blank space for when there is no H2 */}
@@ -62,6 +69,7 @@ const TwoColumnLayout: React.FC<TwoColumnLayoutProps> = ({
       
       </div>
     </div>
+    </motion.div>
   );
 };
 

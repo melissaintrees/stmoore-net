@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @source inline("bg{hover:,focus:,}underline");
 
+
 @theme {
   --font-sans: "PT Sans";
   --color-watermelon: #EA1B3D;

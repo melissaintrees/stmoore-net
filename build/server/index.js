@@ -7,6 +7,7 @@ import { renderToPipeableStream } from "react-dom/server";
 import { useState } from "react";
 import { FaTimes, FaBars } from "react-icons/fa";
 import { FaTiktok, FaInstagram, FaYoutube } from "react-icons/fa6";
+import { motion } from "motion/react";
 import ReactPlayer from "react-player";
 const streamTimeout = 5e3;
 function handleRequest(request, responseStatusCode, responseHeaders, routerContext, loadContext) {
@@ -62,105 +63,113 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const mBase = "transition text-white hover:text-lavender font-normal text-3xl";
   const mActive = "transition text-white hover:text-lavender font-normal text-3xl";
-  return /* @__PURE__ */ jsxs("header", { className: "bg-watermelon", children: [
-    /* @__PURE__ */ jsxs("nav", { className: "max-w-6xl mx-auto flex items-center justify-between p-5", children: [
-      /* @__PURE__ */ jsx("div", { className: "flex flex-1", children: /* @__PURE__ */ jsx(
-        "button",
-        {
-          onClick: () => setMenuOpen(!menuOpen),
-          className: "text-darkblue hover:text-darkblue/70 text-4xl cursor-pointer",
-          title: "Menu",
-          children: menuOpen ? /* @__PURE__ */ jsx(FaTimes, { className: "font-light" }) : /* @__PURE__ */ jsx(FaBars, { "aria-hidden": "true" })
-        }
-      ) }),
-      /* @__PURE__ */ jsxs("div", { className: "lg:flex flex justify-center", children: [
-        /* @__PURE__ */ jsx("span", { className: "sr-only", children: "The Official for St Moore, Synthpop artist" }),
-        /* @__PURE__ */ jsx(
-          "img",
-          {
-            alt: "Logo for St Moore, the synthpop artist",
-            src: "../../st-moore-logo.png",
-            className: "w-24 h-auto"
-          }
-        )
-      ] }),
-      /* @__PURE__ */ jsx("div", { className: "flex flex-1 justify-end ", children: /* @__PURE__ */ jsx(
-        NavLink,
-        {
-          className: "text-lg py-2 px-3 outline-solid outline-4 outline-darkblue hover:outline-darkblue/70 cursor-pointer text-darkblue hover:text-darkblue/70 font-light transition-colors duration-300",
-          target: "blank",
-          to: "https://mailchi.mp/5a651d9e5e32/stmooresfire",
-          children: "SUBSCRIBE"
-        }
-      ) })
-    ] }),
-    menuOpen && /* @__PURE__ */ jsxs("div", { className: "flex flex-col bg-darkred border-t border-darkblue px-6 py-8 space-y-5 text-center", children: [
-      /* @__PURE__ */ jsx(
-        NavLink,
-        {
-          className: ({ isActive }) => isActive ? mActive : mBase,
-          to: "/",
-          onClick: () => setMenuOpen(!menuOpen),
-          children: "HOME"
-        }
-      ),
-      /* @__PURE__ */ jsx(
-        NavLink,
-        {
-          className: ({ isActive }) => isActive ? mActive : mBase,
-          to: "#videos",
-          onClick: () => setMenuOpen(!menuOpen),
-          children: "VIDEOS"
-        }
-      ),
-      /* @__PURE__ */ jsx(
-        NavLink,
-        {
-          className: ({ isActive }) => isActive ? mActive : mBase,
-          to: "#about",
-          onClick: () => setMenuOpen(!menuOpen),
-          children: "ABOUT"
-        }
-      ),
-      /* @__PURE__ */ jsx(
-        NavLink,
-        {
-          className: ({ isActive }) => isActive ? mActive : mBase,
-          to: "#show",
-          onClick: () => setMenuOpen(!menuOpen),
-          children: "SHOW"
-        }
-      ),
-      /* @__PURE__ */ jsxs("div", { className: "space-x-5 p-4 align-center", children: [
-        /* @__PURE__ */ jsx(
-          NavLink,
-          {
-            className: ({ isActive }) => isActive ? mActive : mBase,
-            to: "http://tiktok.com/@stmooresfire",
-            onClick: () => setMenuOpen(!menuOpen),
-            children: /* @__PURE__ */ jsx("div", { className: "circle-icon-container bg-white text-darkblue rounded-full hover:bg-white/80 hover:text-darkblue/80 ", children: /* @__PURE__ */ jsx(FaTiktok, { className: "text-lg " }) })
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          NavLink,
-          {
-            className: ({ isActive }) => isActive ? mActive : mBase,
-            to: "http://instagram.com/stmooresfire",
-            onClick: () => setMenuOpen(!menuOpen),
-            children: /* @__PURE__ */ jsx("div", { className: "circle-icon-container bg-white text-darkblue rounded-full hover:bg-white/80 hover:text-darkblue/80 ", children: /* @__PURE__ */ jsx(FaInstagram, { className: "text-lg" }) })
-          }
-        ),
-        /* @__PURE__ */ jsx(
-          NavLink,
-          {
-            to: "http://youtube.com/stmooresfire",
-            onClick: () => setMenuOpen(!menuOpen),
-            children: /* @__PURE__ */ jsx("div", { className: "circle-icon-container bg-white text-darkblue rounded-full hover:bg-white/80 hover:text-darkblue/80 ", children: /* @__PURE__ */ jsx(FaYoutube, { className: "text-lg" }) })
-          }
-        )
+  return /* @__PURE__ */ jsx(
+    motion.div,
+    {
+      initial: { opacity: 0 },
+      whileInView: { opacity: 1 },
+      transition: { duration: 0.7, ease: "easeOut" },
+      children: /* @__PURE__ */ jsxs("header", { className: "bg-watermelon", children: [
+        /* @__PURE__ */ jsxs("nav", { className: "max-w-6xl mx-auto flex items-center justify-between p-5", children: [
+          /* @__PURE__ */ jsx("div", { className: "flex flex-1", children: /* @__PURE__ */ jsx(
+            "button",
+            {
+              onClick: () => setMenuOpen(!menuOpen),
+              className: "text-darkblue hover:text-darkblue/70 text-4xl cursor-pointer",
+              title: "Menu",
+              children: menuOpen ? /* @__PURE__ */ jsx(FaTimes, { className: "font-light" }) : /* @__PURE__ */ jsx(FaBars, { "aria-hidden": "true" })
+            }
+          ) }),
+          /* @__PURE__ */ jsxs("div", { className: "lg:flex flex justify-center", children: [
+            /* @__PURE__ */ jsx("span", { className: "sr-only", children: "The Official for St Moore, Synthpop artist" }),
+            /* @__PURE__ */ jsx(
+              "img",
+              {
+                alt: "Logo for St Moore, the synthpop artist",
+                src: "../../st-moore-logo.png",
+                className: "w-24 h-auto"
+              }
+            )
+          ] }),
+          /* @__PURE__ */ jsx("div", { className: "flex flex-1 justify-end ", children: /* @__PURE__ */ jsx(
+            NavLink,
+            {
+              className: "text-lg py-2 px-3 outline-solid outline-4 outline-darkblue hover:outline-darkblue/70 cursor-pointer text-darkblue hover:text-darkblue/70 font-light transition-colors duration-300",
+              target: "blank",
+              to: "https://mailchi.mp/5a651d9e5e32/stmooresfire",
+              children: "SUBSCRIBE"
+            }
+          ) })
+        ] }),
+        menuOpen && /* @__PURE__ */ jsxs("div", { className: "flex flex-col bg-darkred border-t border-darkblue px-6 py-8 space-y-5 text-center", children: [
+          /* @__PURE__ */ jsx(
+            NavLink,
+            {
+              className: ({ isActive }) => isActive ? mActive : mBase,
+              to: "/",
+              onClick: () => setMenuOpen(!menuOpen),
+              children: "HOME"
+            }
+          ),
+          /* @__PURE__ */ jsx(
+            NavLink,
+            {
+              className: ({ isActive }) => isActive ? mActive : mBase,
+              to: "#videos",
+              onClick: () => setMenuOpen(!menuOpen),
+              children: "VIDEOS"
+            }
+          ),
+          /* @__PURE__ */ jsx(
+            NavLink,
+            {
+              className: ({ isActive }) => isActive ? mActive : mBase,
+              to: "#about",
+              onClick: () => setMenuOpen(!menuOpen),
+              children: "ABOUT"
+            }
+          ),
+          /* @__PURE__ */ jsx(
+            NavLink,
+            {
+              className: ({ isActive }) => isActive ? mActive : mBase,
+              to: "#show",
+              onClick: () => setMenuOpen(!menuOpen),
+              children: "SHOW"
+            }
+          ),
+          /* @__PURE__ */ jsxs("div", { className: "space-x-5 p-4 align-center", children: [
+            /* @__PURE__ */ jsx(
+              NavLink,
+              {
+                className: ({ isActive }) => isActive ? mActive : mBase,
+                to: "http://tiktok.com/@stmooresfire",
+                onClick: () => setMenuOpen(!menuOpen),
+                children: /* @__PURE__ */ jsx("div", { className: "circle-icon-container bg-white text-darkblue rounded-full hover:bg-white/80 hover:text-darkblue/80 ", children: /* @__PURE__ */ jsx(FaTiktok, { className: "text-lg " }) })
+              }
+            ),
+            /* @__PURE__ */ jsx(
+              NavLink,
+              {
+                className: ({ isActive }) => isActive ? mActive : mBase,
+                to: "http://instagram.com/stmooresfire",
+                onClick: () => setMenuOpen(!menuOpen),
+                children: /* @__PURE__ */ jsx("div", { className: "circle-icon-container bg-white text-darkblue rounded-full hover:bg-white/80 hover:text-darkblue/80 ", children: /* @__PURE__ */ jsx(FaInstagram, { className: "text-lg" }) })
+              }
+            ),
+            /* @__PURE__ */ jsx(
+              NavLink,
+              {
+                to: "http://youtube.com/stmooresfire",
+                onClick: () => setMenuOpen(!menuOpen),
+                children: /* @__PURE__ */ jsx("div", { className: "circle-icon-container bg-white text-darkblue rounded-full hover:bg-white/80 hover:text-darkblue/80 ", children: /* @__PURE__ */ jsx(FaYoutube, { className: "text-lg" }) })
+              }
+            )
+          ] })
+        ] })
       ] })
-    ] })
-  ] });
+    }
+  );
 };
 const Footer = () => {
   const socialBase = "transition text-darkblue hover:text-banana bg-white rounded-full hover:bg-darkblue font-semibold";
@@ -208,7 +217,7 @@ const links = () => [{
   crossOrigin: "anonymous"
 }, {
   rel: "stylesheet",
-  href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+  href: "https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
 }];
 function meta$1({}) {
   return [{
@@ -286,31 +295,6 @@ const route0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
   links,
   meta: meta$1
 }, Symbol.toStringTag, { value: "Module" }));
-const TwoColumnLayout = ({
-  leftChildren,
-  rightChildren,
-  h2,
-  h2Color,
-  backgroundColor,
-  columnGap,
-  id,
-  cta
-}) => {
-  return /* @__PURE__ */ jsx("div", { className: `pt-12 pb-24 ${backgroundColor}`, id, children: /* @__PURE__ */ jsxs("div", { className: "mx-auto max-w-2xl lg:max-w-7xl ", children: [
-    h2 ? /* @__PURE__ */ jsx(
-      "h2",
-      {
-        className: ` py-8 mb-6 mx-auto max-w-lg text-center text-5xl 	font-semibold sm:text-4xl text-${h2Color} uppercase`,
-        children: h2
-      }
-    ) : /* @__PURE__ */ jsx("div", { className: "py-8 " }),
-    /* @__PURE__ */ jsx("div", { className: "flex justify-center items-center", children: /* @__PURE__ */ jsxs("div", { className: `grid gap-0 ${columnGap ? "lg:gap-50" : "lg:gap-12"} grid-cols-1 lg:grid-cols-2`, children: [
-      /* @__PURE__ */ jsx("div", { className: "flex flex-col items-center justify-center mb-10", children: leftChildren }),
-      /* @__PURE__ */ jsx("div", { className: "flex flex-col items-center justify-center mb-10", children: rightChildren })
-    ] }) }),
-    /* @__PURE__ */ jsx("div", { className: "flex justify-center items-center", children: cta && cta })
-  ] }) });
-};
 const HomeLayout = () => {
   return /* @__PURE__ */ jsx(Fragment, {
     children: /* @__PURE__ */ jsx(Outlet, {})
@@ -321,6 +305,39 @@ const route1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
   __proto__: null,
   default: homelayout
 }, Symbol.toStringTag, { value: "Module" }));
+const TwoColumnLayout = ({
+  leftChildren,
+  rightChildren,
+  h2,
+  h2Color,
+  backgroundColor,
+  columnGap,
+  id,
+  cta
+}) => {
+  return /* @__PURE__ */ jsx(
+    motion.div,
+    {
+      initial: { opacity: 0 },
+      whileInView: { opacity: 1 },
+      transition: { duration: 1, ease: "easeOut" },
+      children: /* @__PURE__ */ jsx("div", { className: `pt-12 pb-24 ${backgroundColor}`, id, children: /* @__PURE__ */ jsxs("div", { className: "mx-auto max-w-2xl lg:max-w-7xl ", children: [
+        h2 ? /* @__PURE__ */ jsx(
+          "h2",
+          {
+            className: ` py-8 mb-6 mx-auto max-w-lg text-center text-5xl 	font-semibold sm:text-4xl text-${h2Color} uppercase`,
+            children: h2
+          }
+        ) : /* @__PURE__ */ jsx("div", { className: "py-8 " }),
+        /* @__PURE__ */ jsx("div", { className: "flex justify-center items-center", children: /* @__PURE__ */ jsxs("div", { className: `grid gap-0 ${columnGap ? "lg:gap-50" : "lg:gap-12"} grid-cols-1 lg:grid-cols-2`, children: [
+          /* @__PURE__ */ jsx("div", { className: "flex flex-col items-center justify-center mb-10", children: leftChildren }),
+          /* @__PURE__ */ jsx("div", { className: "flex flex-col items-center justify-center mb-10", children: rightChildren })
+        ] }) }),
+        /* @__PURE__ */ jsx("div", { className: "flex justify-center items-center", children: cta && cta })
+      ] }) })
+    }
+  );
+};
 const VampireCover = "/assets/VampiresCoverJune2025-v7_edited-QdaTT2Gf.jpg";
 const DebutCover = "/assets/StMoore-Debut-nov13-22-TVwtuzxD.jpg";
 const BioPic = "/assets/MoonJamInCello_edited-DDT5fi9Y.jpg";
@@ -332,16 +349,24 @@ const OneColumnLayout = ({
   backgroundColor,
   id
 }) => {
-  return /* @__PURE__ */ jsx("div", { className: `pt-12 pb-24 ${backgroundColor}`, id, children: /* @__PURE__ */ jsxs("div", { className: "mx-auto max-w-2xl ", children: [
-    h2 ? /* @__PURE__ */ jsx(
-      "h2",
-      {
-        className: `py-8 mb-6 mx-auto max-w-lg text-center text-5xl font-semibold sm:text-4xl ${h2Color} uppercase`,
-        children: h2
-      }
-    ) : /* @__PURE__ */ jsx("div", { className: "py-8 " }),
-    /* @__PURE__ */ jsx("div", { className: `grid grid-cols-1`, children: /* @__PURE__ */ jsx("div", { className: "flex flex-col items-center justify-center mb-10", children }) })
-  ] }) });
+  return /* @__PURE__ */ jsx(
+    motion.div,
+    {
+      initial: { opacity: 0 },
+      whileInView: { opacity: 1 },
+      transition: { duration: 1, ease: "easeOut" },
+      children: /* @__PURE__ */ jsx("div", { className: `pt-12 pb-24 ${backgroundColor}`, id, children: /* @__PURE__ */ jsxs("div", { className: "mx-auto max-w-2xl ", children: [
+        h2 ? /* @__PURE__ */ jsx(
+          "h2",
+          {
+            className: `py-8 mb-6 mx-auto max-w-lg text-center text-5xl font-semibold sm:text-4xl ${h2Color} uppercase`,
+            children: h2
+          }
+        ) : /* @__PURE__ */ jsx("div", { className: "py-8 " }),
+        /* @__PURE__ */ jsx("div", { className: `grid grid-cols-1`, children: /* @__PURE__ */ jsx("div", { className: "flex flex-col items-center justify-center mb-10", children }) })
+      ] }) })
+    }
+  );
 };
 function meta({}) {
   return [{
@@ -577,7 +602,7 @@ const route6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
   __proto__: null,
   default: index
 }, Symbol.toStringTag, { value: "Module" }));
-const serverManifest = { "entry": { "module": "/assets/entry.client-Bo5YRCcv.js", "imports": ["/assets/chunk-OIYGIGL5-Cy5T1E9E.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": true, "module": "/assets/root-e8LzFudh.js", "imports": ["/assets/chunk-OIYGIGL5-Cy5T1E9E.js"], "css": ["/assets/root-BF2Rk9y-.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/layouts/homelayout": { "id": "routes/layouts/homelayout", "parentId": "root", "path": void 0, "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/homelayout-8nSilENB.js", "imports": ["/assets/chunk-OIYGIGL5-Cy5T1E9E.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/home/index": { "id": "routes/home/index", "parentId": "routes/layouts/homelayout", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/index-CIPYIvLT.js", "imports": ["/assets/index-T_TF37Qm.js", "/assets/chunk-OIYGIGL5-Cy5T1E9E.js", "/assets/TwoColumnLayout-DzMl1JHC.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/about/index": { "id": "routes/about/index", "parentId": "routes/layouts/homelayout", "path": "about", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/index-C-RctAcH.js", "imports": ["/assets/chunk-OIYGIGL5-Cy5T1E9E.js", "/assets/TwoColumnLayout-DzMl1JHC.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/videos/index": { "id": "routes/videos/index", "parentId": "routes/layouts/homelayout", "path": "videos", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/index-BM66Fd-3.js", "imports": ["/assets/chunk-OIYGIGL5-Cy5T1E9E.js", "/assets/TwoColumnLayout-DzMl1JHC.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/show/index": { "id": "routes/show/index", "parentId": "routes/layouts/homelayout", "path": "show", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/index-Ch4soca0.js", "imports": ["/assets/chunk-OIYGIGL5-Cy5T1E9E.js", "/assets/TwoColumnLayout-DzMl1JHC.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/contact/index": { "id": "routes/contact/index", "parentId": "routes/layouts/homelayout", "path": "contact", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/index-Ck4W6WIh.js", "imports": ["/assets/chunk-OIYGIGL5-Cy5T1E9E.js", "/assets/TwoColumnLayout-DzMl1JHC.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 } }, "url": "/assets/manifest-c6726a6d.js", "version": "c6726a6d", "sri": void 0 };
+const serverManifest = { "entry": { "module": "/assets/entry.client-Bo5YRCcv.js", "imports": ["/assets/chunk-OIYGIGL5-Cy5T1E9E.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": true, "module": "/assets/root-DAT-8RgQ.js", "imports": ["/assets/chunk-OIYGIGL5-Cy5T1E9E.js", "/assets/proxy-Cgj_oK8e.js"], "css": ["/assets/root-B-P6BFBf.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/layouts/homelayout": { "id": "routes/layouts/homelayout", "parentId": "root", "path": void 0, "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/homelayout-8nSilENB.js", "imports": ["/assets/chunk-OIYGIGL5-Cy5T1E9E.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/home/index": { "id": "routes/home/index", "parentId": "routes/layouts/homelayout", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/index-D6JU4GN_.js", "imports": ["/assets/index-CuIL1atO.js", "/assets/chunk-OIYGIGL5-Cy5T1E9E.js", "/assets/TwoColumnLayout-BNU03JSn.js", "/assets/proxy-Cgj_oK8e.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/about/index": { "id": "routes/about/index", "parentId": "routes/layouts/homelayout", "path": "about", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/index-DBv48Lob.js", "imports": ["/assets/chunk-OIYGIGL5-Cy5T1E9E.js", "/assets/TwoColumnLayout-BNU03JSn.js", "/assets/proxy-Cgj_oK8e.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/videos/index": { "id": "routes/videos/index", "parentId": "routes/layouts/homelayout", "path": "videos", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/index-Cy_pHL5v.js", "imports": ["/assets/chunk-OIYGIGL5-Cy5T1E9E.js", "/assets/TwoColumnLayout-BNU03JSn.js", "/assets/proxy-Cgj_oK8e.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/show/index": { "id": "routes/show/index", "parentId": "routes/layouts/homelayout", "path": "show", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/index-C8QBtrrV.js", "imports": ["/assets/chunk-OIYGIGL5-Cy5T1E9E.js", "/assets/TwoColumnLayout-BNU03JSn.js", "/assets/proxy-Cgj_oK8e.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/contact/index": { "id": "routes/contact/index", "parentId": "routes/layouts/homelayout", "path": "contact", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/index-B9LwATel.js", "imports": ["/assets/chunk-OIYGIGL5-Cy5T1E9E.js", "/assets/TwoColumnLayout-BNU03JSn.js", "/assets/proxy-Cgj_oK8e.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 } }, "url": "/assets/manifest-b1a557ea.js", "version": "b1a557ea", "sri": void 0 };
 const assetsBuildDirectory = "build/client";
 const basename = "/";
 const future = { "v8_middleware": false, "unstable_optimizeDeps": false, "unstable_splitRouteModules": false, "unstable_subResourceIntegrity": false, "unstable_viteEnvironmentApi": false };

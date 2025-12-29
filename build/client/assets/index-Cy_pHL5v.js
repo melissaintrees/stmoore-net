@@ -1,0 +1,1 @@
+import{w as o,p as e}from"./chunk-OIYGIGL5-Cy5T1E9E.js";import{T as r}from"./TwoColumnLayout-BNU03JSn.js";import"./proxy-Cgj_oK8e.js";const s=()=>e.jsx(r,{h2:"videos",backgroundColor:"bg-darkred",leftChildren:e.jsx("div",{className:"pic",children:"Pic Here"}),rightChildren:e.jsx("div",{className:"text-gray-800",children:"hello"})}),d=o(s);export{d as default};
