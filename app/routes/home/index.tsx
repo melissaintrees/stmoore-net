@@ -158,7 +158,7 @@ const HomePage = () => {
                 </a>
 
                 <Link
-                  className="text-lg mt-5 py-3 px-2 outline-solid outline-4 outline-darkblue font-medium hover:text-darkblue/70 hover:outline-darkblue/70 text-darkblue cursor-pointer font-medium transition-colors duration-300"
+                  className="text-lg mt-5 py-3 px-8 outline-solid outline-4 outline-darkblue font-medium hover:text-darkblue/70 hover:outline-darkblue/70 text-darkblue cursor-pointer font-medium transition-colors duration-300"
                   target="blank"
                
                   to="https://stmoore.bandcamp.com/"
@@ -178,11 +178,11 @@ const HomePage = () => {
         children={
           <>
             <img
-              className="shadow-lg object-cover"
+              className=" object-cover pl-10 pr-10"
               src={BubblePic}
               alt="St Moore a Spacegirl on the Moon"
             />
-            <div className="mt-8 flex flex-col sm:flex-row justify-center gap-5">
+            <div className="mt-8 flex flex-col sm:flex-row text-center justify-center gap-5">
             <Link
               className="text-lg mt-5 py-3 px-12 outline-solid outline-4 outline-darkred font-medium hover:text-darkred/70 hover:outline-darkred/70 text-darkred cursor-pointer font-medium transition-colors duration-300"
               target="blank"
