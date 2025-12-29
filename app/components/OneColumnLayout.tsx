@@ -26,9 +26,9 @@ const OneColumnLayout: React.FC<OneColumnLayoutProps> = ({
         <motion.div   
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1}}
-        transition={{ duration: 1, ease: "easeOut", }}
+        transition={{ duration: 1, ease: "easeIn" }}
         >
-    <div className={`pt-12 pb-24 ${backgroundColor}`} id={id}>
+    <div className={`pt-6 pb-12 ${backgroundColor}`} id={id}>
      <div className="mx-auto max-w-2xl ">
         {/* blank space for when there is no H2 */}
         {h2 ? (

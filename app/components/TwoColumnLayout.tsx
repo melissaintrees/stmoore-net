@@ -33,9 +33,9 @@ const TwoColumnLayout: React.FC<TwoColumnLayoutProps> = ({
     <motion.div   
     initial={{ opacity: 0 }}
     whileInView={{ opacity: 1}}
-    transition={{ duration: 1, ease: "easeOut" }}
+    transition={{ duration: 1, ease: "easeIn" }}
     >
-    <div className={`pt-12 pb-24 ${backgroundColor}`} id={id}>
+    <div className={`pt-6 pb-12 md:pb-24 ${backgroundColor}`} id={id}>
       <div className="mx-auto max-w-2xl lg:max-w-7xl ">
         {/* blank space for when there is no H2 */}
         {h2 ? (

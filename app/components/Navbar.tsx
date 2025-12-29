@@ -14,12 +14,12 @@ const Navbar = () => {
      <motion.div   
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1}}
-        transition={{ duration:.7, ease: "easeOut", }}
+        transition={{ duration:.7, ease: "easeIn", }}
         >
     <header className="bg-watermelon">
       <nav className="max-w-6xl mx-auto flex items-center justify-between p-5">
         {/*left aligned nav */}
-        <div className="flex flex-1">
+        <div className=" flex-1">
                
               <button
             onClick={() => setMenuOpen(!menuOpen)}
@@ -38,7 +38,7 @@ const Navbar = () => {
 
         {/*centered logo */}
 
-          <div className="lg:flex flex justify-center">
+          <div className="hidden md:flex md:flex-1">
         
               <span className="sr-only">
                 The Official for St Moore, Synthpop artist
@@ -53,7 +53,7 @@ const Navbar = () => {
  
 
         {/* subscribe right menu */}
-        <div className="flex flex-1 justify-end ">
+        <div className="flex-0 lg:visible">
         
             <NavLink
               className="text-lg py-2 px-3 outline-solid outline-4 outline-darkblue hover:outline-darkblue/70 cursor-pointer text-darkblue hover:text-darkblue/70 font-light transition-colors duration-300"
