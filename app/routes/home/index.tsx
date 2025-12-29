@@ -138,7 +138,7 @@ const HomePage = () => {
               navigating the planets, @stmooresfire on all platforms and collabs
               at stmooresfire@gmail.com, and/or support your local synthpop
               weirdo below:
-              <div className="mt-8 flex justify-center gap-4">
+              <div className="mt-8 flex justify-center gap-4 text-center">
                 <a
                   href="https://www.buymeacoffee.com/stmooresfire"
                   target="_blank"
@@ -158,7 +158,7 @@ const HomePage = () => {
                 </a>
 
                 <Link
-                  className="text-lg mt-5 py-3 px-12 outline-solid outline-4 outline-darkblue font-medium hover:text-darkblue/70 hover:outline-darkblue/70 text-darkblue cursor-pointer font-medium transition-colors duration-300"
+                  className="text-lg mt-5 py-3 px-2 outline-solid outline-4 outline-darkblue font-medium hover:text-darkblue/70 hover:outline-darkblue/70 text-darkblue cursor-pointer font-medium transition-colors duration-300"
                   target="blank"
                
                   to="https://stmoore.bandcamp.com/"
@@ -182,7 +182,7 @@ const HomePage = () => {
               src={BubblePic}
               alt="St Moore a Spacegirl on the Moon"
             />
-            <div className="mt-8 flex justify-center gap-5">
+            <div className="mt-8 flex flex-col sm:flex-row justify-center gap-5">
             <Link
               className="text-lg mt-5 py-3 px-12 outline-solid outline-4 outline-darkred font-medium hover:text-darkred/70 hover:outline-darkred/70 text-darkred cursor-pointer font-medium transition-colors duration-300"
               target="blank"
