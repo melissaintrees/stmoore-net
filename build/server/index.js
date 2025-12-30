@@ -4,7 +4,7 @@ import { createReadableStreamFromReadable } from "@react-router/node";
 import { ServerRouter, NavLink, UNSAFE_withComponentProps, Outlet, UNSAFE_withErrorBoundaryProps, isRouteErrorResponse, Meta, Links, ScrollRestoration, Scripts, Link } from "react-router";
 import { isbot } from "isbot";
 import { renderToPipeableStream } from "react-dom/server";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaTimes, FaBars } from "react-icons/fa";
 import { FaTiktok, FaInstagram, FaYoutube } from "react-icons/fa6";
 import { motion } from "motion/react";
@@ -61,8 +61,19 @@ const entryServer = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineP
 }, Symbol.toStringTag, { value: "Module" }));
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const mBase = "transition text-white hover:text-lavender font-normal text-3xl";
-  const mActive = "transition text-white hover:text-lavender font-normal text-3xl";
+  const mBase = "transition text-darkblue font-semibold  font-normal text-1xl";
+  const mActive = "transition text-darkblue font-semibold hover:text-white font-normal text-1xl";
+  const handleResize = () => {
+    if (window.innerWidth >= 768) {
+      setMenuOpen(false);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return /* @__PURE__ */ jsx(
     motion.div,
     {
@@ -70,17 +81,8 @@ const Navbar = () => {
       whileInView: { opacity: 1 },
       transition: { duration: 0.7, ease: "easeIn" },
       children: /* @__PURE__ */ jsxs("header", { className: "bg-watermelon", children: [
-        /* @__PURE__ */ jsxs("nav", { className: "max-w-6xl mx-auto flex items-center justify-between p-5", children: [
-          /* @__PURE__ */ jsx("div", { className: " flex-1", children: /* @__PURE__ */ jsx(
-            "button",
-            {
-              onClick: () => setMenuOpen(!menuOpen),
-              className: "text-darkblue hover:text-darkblue/70 text-4xl cursor-pointer",
-              title: "Menu",
-              children: menuOpen ? /* @__PURE__ */ jsx(FaTimes, { className: "font-light" }) : /* @__PURE__ */ jsx(FaBars, { "aria-hidden": "true" })
-            }
-          ) }),
-          /* @__PURE__ */ jsxs("div", { className: "hidden md:flex md:flex-1", children: [
+        /* @__PURE__ */ jsx("nav", { className: "container w-full max-w-6xl mx-auto px-4 py-2 mx-auto bg-watermelon  md:px-5 md:py-6", children: /* @__PURE__ */ jsxs("div", { className: " flex items-center justify-between ", children: [
+          /* @__PURE__ */ jsxs("div", { className: "flex  flex flex-col gap-4 mt-2 mb-4 md:mb-0 md:mt-0 md:flex-row md:items-center md:gap-6", children: [
             /* @__PURE__ */ jsx("span", { className: "sr-only", children: "The Official for St Moore, Synthpop artist" }),
             /* @__PURE__ */ jsx(
               "img",
@@ -91,17 +93,128 @@ const Navbar = () => {
               }
             )
           ] }),
-          /* @__PURE__ */ jsx("div", { className: "flex-0 lg:visible", children: /* @__PURE__ */ jsx(
-            NavLink,
+          /* @__PURE__ */ jsxs("ul", { className: "hidden md:flex gap-4 mt-2 mb-4 md:mb-0 md:mt-0 md:flex-row items-center ", children: [
+            /* @__PURE__ */ jsx(
+              "li",
+              {
+                className: "flex-1 items-center p-3 ",
+                children: /* @__PURE__ */ jsx(
+                  NavLink,
+                  {
+                    className: ({ isActive }) => isActive ? mActive : mBase,
+                    to: "/",
+                    onClick: () => setMenuOpen(!menuOpen),
+                    children: "HOME"
+                  }
+                )
+              }
+            ),
+            /* @__PURE__ */ jsx(
+              "li",
+              {
+                className: " p-3  ",
+                children: /* @__PURE__ */ jsx(
+                  NavLink,
+                  {
+                    className: ({ isActive }) => isActive ? mActive : mBase,
+                    to: "#videos",
+                    onClick: () => setMenuOpen(!menuOpen),
+                    children: "VIDEOS"
+                  }
+                )
+              }
+            ),
+            /* @__PURE__ */ jsx(
+              "li",
+              {
+                className: "flex-1  p-3  ",
+                children: /* @__PURE__ */ jsx(
+                  NavLink,
+                  {
+                    className: ({ isActive }) => isActive ? mActive : mBase,
+                    to: "#about",
+                    onClick: () => setMenuOpen(!menuOpen),
+                    children: "ABOUT"
+                  }
+                )
+              }
+            ),
+            /* @__PURE__ */ jsx(
+              "li",
+              {
+                className: "flex-1  p-3  ",
+                children: /* @__PURE__ */ jsx(
+                  NavLink,
+                  {
+                    className: ({ isActive }) => isActive ? mActive : mBase,
+                    to: "#show",
+                    onClick: () => setMenuOpen(!menuOpen),
+                    children: "SHOW"
+                  }
+                )
+              }
+            ),
+            /* @__PURE__ */ jsx(
+              "li",
+              {
+                className: "flex-1  p-3  ",
+                children: /* @__PURE__ */ jsx(
+                  NavLink,
+                  {
+                    className: ({ isActive }) => isActive ? mActive : mBase,
+                    to: "https://mailchi.mp/5a651d9e5e32/stmooresfire",
+                    onClick: () => setMenuOpen(!menuOpen),
+                    children: "SUBSCRIBE"
+                  }
+                )
+              }
+            ),
+            /* @__PURE__ */ jsx(
+              "li",
+              {
+                className: "flex  p-3 ",
+                children: /* @__PURE__ */ jsxs("div", { className: "space-x-4 align-center", children: [
+                  /* @__PURE__ */ jsx(
+                    NavLink,
+                    {
+                      className: ({ isActive }) => isActive ? mActive : mBase,
+                      to: "http://tiktok.com/@stmooresfire",
+                      onClick: () => setMenuOpen(!menuOpen),
+                      children: /* @__PURE__ */ jsx("div", { className: "circle-icon-container bg-white text-darkblue rounded-full hover:bg-white/80 hover:text-darkblue/80 ", children: /* @__PURE__ */ jsx(FaTiktok, { className: "text-lg " }) })
+                    }
+                  ),
+                  /* @__PURE__ */ jsx(
+                    NavLink,
+                    {
+                      className: ({ isActive }) => isActive ? mActive : mBase,
+                      to: "http://instagram.com/stmooresfire",
+                      onClick: () => setMenuOpen(!menuOpen),
+                      children: /* @__PURE__ */ jsx("div", { className: "circle-icon-container bg-white text-darkblue rounded-full hover:bg-white/80 hover:text-darkblue/80 ", children: /* @__PURE__ */ jsx(FaInstagram, { className: "text-lg" }) })
+                    }
+                  ),
+                  /* @__PURE__ */ jsx(
+                    NavLink,
+                    {
+                      to: "http://youtube.com/stmooresfire",
+                      onClick: () => setMenuOpen(!menuOpen),
+                      children: /* @__PURE__ */ jsx("div", { className: "circle-icon-container bg-white text-darkblue rounded-full hover:bg-white/80 hover:text-darkblue/80 ", children: /* @__PURE__ */ jsx(FaYoutube, { className: "text-lg" }) })
+                    }
+                  )
+                ] })
+              }
+            )
+          ] }),
+          /* @__PURE__ */ jsx(
+            "button",
             {
-              className: "text-lg py-2 px-3 outline-solid outline-4 outline-darkblue hover:outline-darkblue/70 cursor-pointer text-darkblue hover:text-darkblue/70 font-light transition-colors duration-300",
-              target: "blank",
-              to: "https://mailchi.mp/5a651d9e5e32/stmooresfire",
-              children: "SUBSCRIBE"
+              onClick: () => setMenuOpen(!menuOpen),
+              className: "flex order-1 md:hidden text-darkblue hover:text-darkblue/70 text-4xl cursor-pointer  ",
+              title: "Menu",
+              children: menuOpen ? /* @__PURE__ */ jsx(FaTimes, { className: "font-light" }) : /* @__PURE__ */ jsx(FaBars, { "aria-hidden": "true" })
             }
-          ) })
-        ] }),
-        menuOpen && /* @__PURE__ */ jsxs("div", { className: "flex flex-col bg-darkred border-t border-darkblue px-6 py-8 space-y-5 text-center", children: [
+          )
+        ] }) }),
+        menuOpen && /* @__PURE__ */ jsxs("div", { className: "flex md:hidden flex-col bg-darkred border-t border-darkblue px-6 py-8 space-y-5 text-center", children: [
           /* @__PURE__ */ jsx(
             NavLink,
             {
@@ -138,7 +251,16 @@ const Navbar = () => {
               children: "SHOW"
             }
           ),
-          /* @__PURE__ */ jsxs("div", { className: "space-x-5 p-4 align-center", children: [
+          /* @__PURE__ */ jsx(
+            NavLink,
+            {
+              className: ({ isActive }) => isActive ? mActive : mBase,
+              to: "https://mailchi.mp/5a651d9e5e32/stmooresfire",
+              onClick: () => setMenuOpen(!menuOpen),
+              children: "SUBSCRIBE"
+            }
+          ),
+          /* @__PURE__ */ jsxs("div", { className: "space-x-5 p-3 align-center", children: [
             /* @__PURE__ */ jsx(
               NavLink,
               {
@@ -602,7 +724,7 @@ const route6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
   __proto__: null,
   default: index
 }, Symbol.toStringTag, { value: "Module" }));
-const serverManifest = { "entry": { "module": "/assets/entry.client-Bo5YRCcv.js", "imports": ["/assets/chunk-OIYGIGL5-Cy5T1E9E.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": true, "module": "/assets/root-DoH2h8D0.js", "imports": ["/assets/chunk-OIYGIGL5-Cy5T1E9E.js", "/assets/proxy-Cgj_oK8e.js"], "css": ["/assets/root-DbvMqpel.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/layouts/homelayout": { "id": "routes/layouts/homelayout", "parentId": "root", "path": void 0, "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/homelayout-8nSilENB.js", "imports": ["/assets/chunk-OIYGIGL5-Cy5T1E9E.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/home/index": { "id": "routes/home/index", "parentId": "routes/layouts/homelayout", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/index-D2em9tIs.js", "imports": ["/assets/index-CcOTQMYi.js", "/assets/chunk-OIYGIGL5-Cy5T1E9E.js", "/assets/TwoColumnLayout-HcBpAAtD.js", "/assets/proxy-Cgj_oK8e.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/about/index": { "id": "routes/about/index", "parentId": "routes/layouts/homelayout", "path": "about", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/index-Covd0YKy.js", "imports": ["/assets/chunk-OIYGIGL5-Cy5T1E9E.js", "/assets/TwoColumnLayout-HcBpAAtD.js", "/assets/proxy-Cgj_oK8e.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/videos/index": { "id": "routes/videos/index", "parentId": "routes/layouts/homelayout", "path": "videos", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/index-DVX2SwvB.js", "imports": ["/assets/chunk-OIYGIGL5-Cy5T1E9E.js", "/assets/TwoColumnLayout-HcBpAAtD.js", "/assets/proxy-Cgj_oK8e.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/show/index": { "id": "routes/show/index", "parentId": "routes/layouts/homelayout", "path": "show", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/index-BTne1KjW.js", "imports": ["/assets/chunk-OIYGIGL5-Cy5T1E9E.js", "/assets/TwoColumnLayout-HcBpAAtD.js", "/assets/proxy-Cgj_oK8e.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/contact/index": { "id": "routes/contact/index", "parentId": "routes/layouts/homelayout", "path": "contact", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/index-CrU-TM2M.js", "imports": ["/assets/chunk-OIYGIGL5-Cy5T1E9E.js", "/assets/TwoColumnLayout-HcBpAAtD.js", "/assets/proxy-Cgj_oK8e.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 } }, "url": "/assets/manifest-905c0511.js", "version": "905c0511", "sri": void 0 };
+const serverManifest = { "entry": { "module": "/assets/entry.client-Bo5YRCcv.js", "imports": ["/assets/chunk-OIYGIGL5-Cy5T1E9E.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": true, "module": "/assets/root-B_kmRbi2.js", "imports": ["/assets/chunk-OIYGIGL5-Cy5T1E9E.js", "/assets/proxy-Cgj_oK8e.js"], "css": ["/assets/root-CaxktWGy.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/layouts/homelayout": { "id": "routes/layouts/homelayout", "parentId": "root", "path": void 0, "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/homelayout-8nSilENB.js", "imports": ["/assets/chunk-OIYGIGL5-Cy5T1E9E.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/home/index": { "id": "routes/home/index", "parentId": "routes/layouts/homelayout", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/index-D2em9tIs.js", "imports": ["/assets/index-CcOTQMYi.js", "/assets/chunk-OIYGIGL5-Cy5T1E9E.js", "/assets/TwoColumnLayout-HcBpAAtD.js", "/assets/proxy-Cgj_oK8e.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/about/index": { "id": "routes/about/index", "parentId": "routes/layouts/homelayout", "path": "about", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/index-Covd0YKy.js", "imports": ["/assets/chunk-OIYGIGL5-Cy5T1E9E.js", "/assets/TwoColumnLayout-HcBpAAtD.js", "/assets/proxy-Cgj_oK8e.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/videos/index": { "id": "routes/videos/index", "parentId": "routes/layouts/homelayout", "path": "videos", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/index-DVX2SwvB.js", "imports": ["/assets/chunk-OIYGIGL5-Cy5T1E9E.js", "/assets/TwoColumnLayout-HcBpAAtD.js", "/assets/proxy-Cgj_oK8e.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/show/index": { "id": "routes/show/index", "parentId": "routes/layouts/homelayout", "path": "show", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/index-BTne1KjW.js", "imports": ["/assets/chunk-OIYGIGL5-Cy5T1E9E.js", "/assets/TwoColumnLayout-HcBpAAtD.js", "/assets/proxy-Cgj_oK8e.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/contact/index": { "id": "routes/contact/index", "parentId": "routes/layouts/homelayout", "path": "contact", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/index-CrU-TM2M.js", "imports": ["/assets/chunk-OIYGIGL5-Cy5T1E9E.js", "/assets/TwoColumnLayout-HcBpAAtD.js", "/assets/proxy-Cgj_oK8e.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 } }, "url": "/assets/manifest-e133fb79.js", "version": "e133fb79", "sri": void 0 };
 const assetsBuildDirectory = "build/client";
 const basename = "/";
 const future = { "v8_middleware": false, "unstable_optimizeDeps": false, "unstable_splitRouteModules": false, "unstable_subResourceIntegrity": false, "unstable_viteEnvironmentApi": false };
