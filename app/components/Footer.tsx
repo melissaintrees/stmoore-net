@@ -14,6 +14,7 @@ const Footer = () => {
           <NavLink
             className={socialBase}
             to={"http://tiktok.com/@stmooresfire"}
+            aria-label="Link to St Moore's TikTok"
           >
             <div className="circle-icon-container">
               <FaTiktok className="text-md" />
@@ -22,6 +23,7 @@ const Footer = () => {
           <NavLink
             className={socialBase}
             to={"http://instagram.com/stmooresfire"}
+            aria-label="Link to St Moore's Instagram"
           >
             <div className="circle-icon-container">
               <FaInstagram className="text-md" />
@@ -30,6 +32,7 @@ const Footer = () => {
           <NavLink
             className={socialBase}
             to={"http://youtube.com/stmooresfire"}
+            aria-label="Link to St Moore's YouTube"
           >
             <div className="circle-icon-container">
               <FaYoutube className="text-md" />

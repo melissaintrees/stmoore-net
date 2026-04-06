@@ -82,17 +82,14 @@ const Navbar = () => {
       transition: { duration: 0.7, ease: "easeIn" },
       children: /* @__PURE__ */ jsxs("header", { className: "bg-watermelon", children: [
         /* @__PURE__ */ jsx("nav", { className: "container w-full max-w-6xl mx-auto px-4 py-2 mx-auto bg-watermelon  md:px-5 md:py-6", children: /* @__PURE__ */ jsxs("div", { className: " flex items-center justify-between ", children: [
-          /* @__PURE__ */ jsxs("div", { className: "flex  flex flex-col gap-4 mt-2 mb-4 md:mb-0 md:mt-0 md:flex-row md:items-center md:gap-6", children: [
-            /* @__PURE__ */ jsx("span", { className: "sr-only", children: "The Official for St Moore, Synthpop artist" }),
-            /* @__PURE__ */ jsx(
-              "img",
-              {
-                alt: "Logo for St Moore, the synthpop artist",
-                src: "../../st-moore-logo.png",
-                className: "w-24 h-auto"
-              }
-            )
-          ] }),
+          /* @__PURE__ */ jsx("div", { className: "flex  flex flex-col gap-4 mt-2 mb-4 md:mb-0 md:mt-0 md:flex-row md:items-center md:gap-6", children: /* @__PURE__ */ jsx(
+            "img",
+            {
+              "aria-label": "The Official Site for St Moore, Magical Synthpop artist ",
+              src: "../../st-moore-logo.png",
+              className: "w-24 h-auto"
+            }
+          ) }),
           /* @__PURE__ */ jsxs("ul", { className: "hidden md:flex gap-4 mt-2 mb-4 md:mb-0 md:mt-0 md:flex-row items-center ", children: [
             /* @__PURE__ */ jsx(
               "li",
@@ -180,6 +177,7 @@ const Navbar = () => {
                       className: ({ isActive }) => isActive ? mActive : mBase,
                       to: "http://tiktok.com/@stmooresfire",
                       onClick: () => setMenuOpen(!menuOpen),
+                      "aria-label": "Link to St Moore's TikTok",
                       children: /* @__PURE__ */ jsx("div", { className: "circle-icon-container bg-white text-darkblue rounded-full hover:bg-white/80 hover:text-darkblue/80 ", children: /* @__PURE__ */ jsx(FaTiktok, { className: "text-lg " }) })
                     }
                   ),
@@ -189,6 +187,7 @@ const Navbar = () => {
                       className: ({ isActive }) => isActive ? mActive : mBase,
                       to: "http://instagram.com/stmooresfire",
                       onClick: () => setMenuOpen(!menuOpen),
+                      "aria-label": "Link to St Moore's Instagram",
                       children: /* @__PURE__ */ jsx("div", { className: "circle-icon-container bg-white text-darkblue rounded-full hover:bg-white/80 hover:text-darkblue/80 ", children: /* @__PURE__ */ jsx(FaInstagram, { className: "text-lg" }) })
                     }
                   ),
@@ -197,6 +196,7 @@ const Navbar = () => {
                     {
                       to: "http://youtube.com/stmooresfire",
                       onClick: () => setMenuOpen(!menuOpen),
+                      "aria-label": "Link to St Moore's YouTube Channel",
                       children: /* @__PURE__ */ jsx("div", { className: "circle-icon-container bg-white text-darkblue rounded-full hover:bg-white/80 hover:text-darkblue/80 ", children: /* @__PURE__ */ jsx(FaYoutube, { className: "text-lg" }) })
                     }
                   )
@@ -266,6 +266,7 @@ const Navbar = () => {
               {
                 className: ({ isActive }) => isActive ? mActive : mBase,
                 to: "http://tiktok.com/@stmooresfire",
+                "aria-label": "Link to St Moore's Tiktok",
                 onClick: () => setMenuOpen(!menuOpen),
                 children: /* @__PURE__ */ jsx("div", { className: "circle-icon-container bg-white text-darkblue rounded-full hover:bg-white/80 hover:text-darkblue/80 ", children: /* @__PURE__ */ jsx(FaTiktok, { className: "text-lg " }) })
               }
@@ -275,6 +276,7 @@ const Navbar = () => {
               {
                 className: ({ isActive }) => isActive ? mActive : mBase,
                 to: "http://instagram.com/stmooresfire",
+                "aria-label": "Link to St Moore's Instagram",
                 onClick: () => setMenuOpen(!menuOpen),
                 children: /* @__PURE__ */ jsx("div", { className: "circle-icon-container bg-white text-darkblue rounded-full hover:bg-white/80 hover:text-darkblue/80 ", children: /* @__PURE__ */ jsx(FaInstagram, { className: "text-lg" }) })
               }
@@ -283,6 +285,7 @@ const Navbar = () => {
               NavLink,
               {
                 to: "http://youtube.com/stmooresfire",
+                "aria-label": "Link to St Moore's YouTube Channel",
                 onClick: () => setMenuOpen(!menuOpen),
                 children: /* @__PURE__ */ jsx("div", { className: "circle-icon-container bg-white text-darkblue rounded-full hover:bg-white/80 hover:text-darkblue/80 ", children: /* @__PURE__ */ jsx(FaYoutube, { className: "text-lg" }) })
               }
@@ -303,6 +306,7 @@ const Footer = () => {
         {
           className: socialBase,
           to: "http://tiktok.com/@stmooresfire",
+          "aria-label": "Link to St Moore's TikTok",
           children: /* @__PURE__ */ jsx("div", { className: "circle-icon-container", children: /* @__PURE__ */ jsx(FaTiktok, { className: "text-md" }) })
         }
       ),
@@ -311,6 +315,7 @@ const Footer = () => {
         {
           className: socialBase,
           to: "http://instagram.com/stmooresfire",
+          "aria-label": "Link to St Moore's Instagram",
           children: /* @__PURE__ */ jsx("div", { className: "circle-icon-container", children: /* @__PURE__ */ jsx(FaInstagram, { className: "text-md" }) })
         }
       ),
@@ -319,6 +324,7 @@ const Footer = () => {
         {
           className: socialBase,
           to: "http://youtube.com/stmooresfire",
+          "aria-label": "Link to St Moore's YouTube",
           children: /* @__PURE__ */ jsx("div", { className: "circle-icon-container", children: /* @__PURE__ */ jsx(FaYoutube, { className: "text-md" }) })
         }
       )
@@ -460,8 +466,44 @@ const TwoColumnLayout = ({
     }
   );
 };
-const VampireCover = "/assets/VampiresCoverJune2025-v7_edited-QdaTT2Gf.jpg";
-const DebutCover = "/assets/StMoore-Debut-nov13-22-TVwtuzxD.jpg";
+const ThreeColumnLayout = ({
+  leftChildren,
+  middleChildren,
+  rightChildren,
+  h2,
+  h2Color,
+  backgroundColor,
+  columnGap,
+  id,
+  cta
+}) => {
+  return /* @__PURE__ */ jsx(
+    motion.div,
+    {
+      initial: { opacity: 0 },
+      whileInView: { opacity: 1 },
+      transition: { duration: 1, ease: "easeIn" },
+      children: /* @__PURE__ */ jsx("div", { className: `pt-6 pb-12 md:pb-24 ${backgroundColor}`, id, children: /* @__PURE__ */ jsxs("div", { className: "mx-auto max-w-2xl lg:max-w-7xl ", children: [
+        h2 ? /* @__PURE__ */ jsx(
+          "h2",
+          {
+            className: ` py-8 mb-6 mx-auto max-w-lg text-center text-5xl 	font-semibold sm:text-4xl text-${h2Color} uppercase`,
+            children: h2
+          }
+        ) : /* @__PURE__ */ jsx("div", { className: "py-8 " }),
+        /* @__PURE__ */ jsx("div", { className: "flex justify-center items-center", children: /* @__PURE__ */ jsxs("div", { className: `grid gap-0 ${columnGap ? "lg:gap-50" : "lg:gap-12"} grid-cols-1 lg:grid-cols-3`, children: [
+          /* @__PURE__ */ jsx("div", { className: "flex flex-col items-center mb-10 m-5", children: leftChildren }),
+          /* @__PURE__ */ jsx("div", { className: "flex flex-col items-center mb-10 m-5", children: middleChildren }),
+          /* @__PURE__ */ jsx("div", { className: "flex flex-col items-center mb-10 m-5", children: rightChildren })
+        ] }) }),
+        /* @__PURE__ */ jsx("div", { className: "flex justify-center items-center", children: cta && cta })
+      ] }) })
+    }
+  );
+};
+const VampireCover = "/assets/stmoore-vampires-cover-web-D3WA0fMs.png";
+const DebutCover = "/assets/stmoore-debut-cover-web-TVwtuzxD.jpg";
+const AlienBloodCover = "/assets/stmoore-alienblood-cover-web-CUkl4JEr.png";
 const BioPic = "/assets/MoonJamInCello_edited-DDT5fi9Y.jpg";
 const BubblePic = "/assets/LayingInACaveSweet-Stmoore-edit-Bhr07GPV.jpg";
 const OneColumnLayout = ({
@@ -495,18 +537,31 @@ function meta({}) {
     title: "St Moore | Welcome"
   }, {
     name: "description",
-    content: "Elevating your weird"
+    content: "Synthpop to Elevate your mystery"
   }];
 }
 const HomePage = () => {
   return /* @__PURE__ */ jsxs(Fragment, {
-    children: [/* @__PURE__ */ jsx(TwoColumnLayout, {
+    children: [/* @__PURE__ */ jsx(ThreeColumnLayout, {
       backgroundColor: "bg-darkblue",
       leftChildren: /* @__PURE__ */ jsxs(Fragment, {
         children: [/* @__PURE__ */ jsx("img", {
+          src: AlienBloodCover,
+          "aria-label": "cover of Alien Blood",
+          alt: "A spooky glamourous painting of St Moore with blue skin and day glow eyes, and a watermelon pink background",
+          className: "mb-5 shadow-lg"
+        }), /* @__PURE__ */ jsx(Link, {
+          className: "mt-5 text-lg py-3 px-12 outline-solid outline-4 outline-lavender hover:outline-lavender/70 cursor-pointer text-lavender hover:text-lavender/70 font-light transition-colors duration-300",
+          target: "blank",
+          to: "https://stmoore.bandcamp.com/track/alien-blood",
+          children: "NEW SONG!"
+        })]
+      }),
+      middleChildren: /* @__PURE__ */ jsxs(Fragment, {
+        children: [/* @__PURE__ */ jsx("img", {
           src: VampireCover,
-          alt: "Example",
-          className: "mb-5 shadow-lg w-100 h-100 object-cover"
+          alt: "Cover image of St Moore, with light brown hair and a pink dress, as a vampire",
+          className: "mb-5 shadow-lg"
         }), /* @__PURE__ */ jsx(Link, {
           className: "mt-5 text-lg py-3 px-12 outline-solid outline-4 outline-lavender hover:outline-lavender/70 cursor-pointer text-lavender hover:text-lavender/70 font-light transition-colors duration-300",
           target: "blank",
@@ -517,8 +572,8 @@ const HomePage = () => {
       rightChildren: /* @__PURE__ */ jsxs(Fragment, {
         children: [/* @__PURE__ */ jsx("img", {
           src: DebutCover,
-          alt: "Example",
-          className: "mb-5 shadow-lg w-100 h-100 object-cover"
+          alt: "St Moore is laying on a couch and playing a giant spoon like a guitar and with a giant alien in an 80s blue dress",
+          className: "mb-5 shadow-lg"
         }), /* @__PURE__ */ jsx(Link, {
           className: "text-lg mt-5 py-3 px-12 outline-solid outline-4 outline-lavender hover:outline-lavender/70 cursor-pointer text-lavender hover:text-lavender/70 font-light transition-colors duration-300",
           target: "blank",
@@ -540,14 +595,14 @@ const HomePage = () => {
             height: "auto",
             aspectRatio: "16/9"
           },
-          src: "https://youtu.be/Et3IoYRKkZ8?si=GG4I8IJg_C4v3UeL"
+          src: "https://youtu.be/Et3IoYRKkZ8"
         }), /* @__PURE__ */ jsx(ReactPlayer, {
           style: {
             width: "150%",
             height: "auto",
             aspectRatio: "16/9"
           },
-          src: "https://www.youtube.com/watch?v=P-3VxVttEHo&t=1s"
+          src: "https://www.youtube.com/embed/P-3VxVttEHo?si=y4hA97h5MXi8h9Yn"
         })]
       }),
       rightChildren: /* @__PURE__ */ jsxs(Fragment, {
@@ -560,6 +615,8 @@ const HomePage = () => {
           },
           src: "https://www.youtube.com/watch?v=wp_Mp_13EIs&t=3s"
         }), /* @__PURE__ */ jsx(ReactPlayer, {
+          "aria-hidden": "true",
+          "aria-live": "off",
           style: {
             width: "150%",
             height: "auto",
@@ -571,8 +628,9 @@ const HomePage = () => {
       cta: /* @__PURE__ */ jsx(Link, {
         className: "text-lg text-darkblue mt-5 py-3 px-12 outline-solid outline-4 outline-darkblue hover:outline-darkblue/70 cursor-pointer text-darkblue hover:text-darkblue/70 font-light duration-300",
         target: "blank",
+        "aria-label": "Link to St Moore's YouTube Channel",
         to: "https://youtube.com/stmooresfire?sub_confirmation=1",
-        children: "SUBSCRIBE ON YOUTUBE"
+        children: "SUBSCRIBE TO CHANNEL"
       })
     }), /* @__PURE__ */ jsx(TwoColumnLayout, {
       backgroundColor: "bg-watermelon",
@@ -583,13 +641,25 @@ const HomePage = () => {
         children: /* @__PURE__ */ jsx("img", {
           className: "shadow-lg object-cover",
           src: BioPic,
-          alt: "St Moore a Spacegirl on the Moon"
+          alt: "St Moore is a wearing an oversized heavy metal hoodie and high heeled boots with a purple metallic background"
         })
       }),
       rightChildren: /* @__PURE__ */ jsx(Fragment, {
         children: /* @__PURE__ */ jsxs("div", {
           className: "text-white font-medium text-xl m-4",
-          children: ['St Moore is a Chicago-based synthpop singer, producer, and performer. FKA Melissa Dungan, the Hollywood native performed throughout the US and released two E.P.s as "Skates," sometimes going by MQ Musik and Squid Malone. ', /* @__PURE__ */ jsx("br", {}), " ", /* @__PURE__ */ jsx("br", {}), "In 2023, she settled on the name St Moore, and re-released her self-titled Debut. In 2025, she released Vampires Are Trying to Steal Your Blood as a result of her tiktok followers suggestions.", /* @__PURE__ */ jsx("br", {}), " ", /* @__PURE__ */ jsx("br", {}), 'Feb 14th 2026 will see the release of single "Alien Blood" followed by hopefully sync placements, and live shows. Her influences include Astrology, Yoko Ono, Missy Elliot, Laurie Anderson, and comedic wackiness. St Moore drinks sparkling water harvested from active volcanoes on the moon.', /* @__PURE__ */ jsx("br", {}), " ", /* @__PURE__ */ jsx("br", {}), "Tune in for inspirational vampire spells and yogic guides to navigating the planets, @stmooresfire on all platforms and collabs at stmooresfire@gmail.com, and/or support your local synthpop weirdo below:", /* @__PURE__ */ jsxs("div", {
+          children: ['St Moore is a Chicago-based synthpop singer, producer, and performer. FKA Melissa Dungan, the Hollywood native performed throughout the US and released two E.P.s as "Skates," sometimes going by MQ Musik and Squid Malone. ', /* @__PURE__ */ jsx("br", {
+            "aria-hidden": "true"
+          }), " ", /* @__PURE__ */ jsx("br", {
+            "aria-hidden": "true"
+          }), "In 2023, she settled on the name St Moore, and re-released her self-titled Debut. In 2025, she released Vampires Are Trying to Steal Your Blood as a result of her tiktok followers suggestions.", /* @__PURE__ */ jsx("br", {
+            "aria-hidden": "true"
+          }), " ", /* @__PURE__ */ jsx("br", {
+            "aria-hidden": "true"
+          }), 'April 5th, she released single "Alien Blood" on Bandcamp and May 20th it will be available everywhere. Her influences include Astrology, Yoko Ono, Missy Elliot, Laurie Anderson, and comedic wackiness. St Moore drinks sparkling water harvested from active volcanoes on the moon.', /* @__PURE__ */ jsx("br", {
+            "aria-hidden": "true"
+          }), " ", /* @__PURE__ */ jsx("br", {
+            "aria-hidden": "true"
+          }), "Tune in for inspirational vampire spells and yogic guides to navigating the planets, @stmooresfire on all platforms and collabs at stmooresfire@gmail.com, and/or support your local synthpop weirdo below:", /* @__PURE__ */ jsxs("div", {
             className: "mt-8 flex justify-center gap-4 text-center",
             children: [/* @__PURE__ */ jsx("a", {
               href: "https://www.buymeacoffee.com/stmooresfire",
@@ -604,7 +674,7 @@ const HomePage = () => {
                 "data-outline-color": "#ffffff",
                 "data-font-color": "#ffffff",
                 src: "https://cdn.buymeacoffee.com/buttons/v2/default-violet.png",
-                alt: "Buy Me a Coffee"
+                alt: "Support St Moore by buying them a tea on Buy Me a Coffee"
               })
             }), /* @__PURE__ */ jsx(Link, {
               className: "text-lg mt-5 py-3 px-8 outline-solid outline-4 outline-darkblue font-medium hover:text-darkblue/70 hover:outline-darkblue/70 text-darkblue cursor-pointer font-medium transition-colors duration-300",
@@ -630,11 +700,13 @@ const HomePage = () => {
           children: [/* @__PURE__ */ jsx(Link, {
             className: "text-lg mt-5 py-3 px-12 outline-solid outline-4 outline-darkred font-medium hover:text-darkred/70 hover:outline-darkred/70 text-darkred cursor-pointer font-medium transition-colors duration-300",
             target: "blank",
+            "aria-label": "Link to St Moore's Sparkling Water Performance Series",
             to: "https://www.youtube.com/playlist?list=PLcd_6XBjr83eP9ELMzd8mRTYHXNNATpe2",
             children: "SPARKLING WATER (2024)"
           }), /* @__PURE__ */ jsx(Link, {
             className: "text-lg mt-5 py-3 px-12 outline-solid outline-4 outline-darkred font-medium hover:text-darkred/70 hover:outline-darkred/70 text-darkred cursor-pointer font-medium transition-colors duration-300",
             target: "blank",
+            "aria-label": "Link to St Moore's Pandemic Performance Series, BANANAS AF",
             to: "https://www.youtube.com/playlist?list=PLcd_6XBjr83efNqUpgp9vEr1zgwLLhBpj",
             children: "BANANAS AF (2021)"
           })]
@@ -724,7 +796,7 @@ const route6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
   __proto__: null,
   default: index
 }, Symbol.toStringTag, { value: "Module" }));
-const serverManifest = { "entry": { "module": "/assets/entry.client-Bo5YRCcv.js", "imports": ["/assets/chunk-OIYGIGL5-Cy5T1E9E.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": true, "module": "/assets/root-B_kmRbi2.js", "imports": ["/assets/chunk-OIYGIGL5-Cy5T1E9E.js", "/assets/proxy-Cgj_oK8e.js"], "css": ["/assets/root-CaxktWGy.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/layouts/homelayout": { "id": "routes/layouts/homelayout", "parentId": "root", "path": void 0, "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/homelayout-8nSilENB.js", "imports": ["/assets/chunk-OIYGIGL5-Cy5T1E9E.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/home/index": { "id": "routes/home/index", "parentId": "routes/layouts/homelayout", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/index-D2em9tIs.js", "imports": ["/assets/index-CcOTQMYi.js", "/assets/chunk-OIYGIGL5-Cy5T1E9E.js", "/assets/TwoColumnLayout-HcBpAAtD.js", "/assets/proxy-Cgj_oK8e.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/about/index": { "id": "routes/about/index", "parentId": "routes/layouts/homelayout", "path": "about", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/index-Covd0YKy.js", "imports": ["/assets/chunk-OIYGIGL5-Cy5T1E9E.js", "/assets/TwoColumnLayout-HcBpAAtD.js", "/assets/proxy-Cgj_oK8e.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/videos/index": { "id": "routes/videos/index", "parentId": "routes/layouts/homelayout", "path": "videos", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/index-DVX2SwvB.js", "imports": ["/assets/chunk-OIYGIGL5-Cy5T1E9E.js", "/assets/TwoColumnLayout-HcBpAAtD.js", "/assets/proxy-Cgj_oK8e.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/show/index": { "id": "routes/show/index", "parentId": "routes/layouts/homelayout", "path": "show", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/index-BTne1KjW.js", "imports": ["/assets/chunk-OIYGIGL5-Cy5T1E9E.js", "/assets/TwoColumnLayout-HcBpAAtD.js", "/assets/proxy-Cgj_oK8e.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/contact/index": { "id": "routes/contact/index", "parentId": "routes/layouts/homelayout", "path": "contact", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/index-CrU-TM2M.js", "imports": ["/assets/chunk-OIYGIGL5-Cy5T1E9E.js", "/assets/TwoColumnLayout-HcBpAAtD.js", "/assets/proxy-Cgj_oK8e.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 } }, "url": "/assets/manifest-e133fb79.js", "version": "e133fb79", "sri": void 0 };
+const serverManifest = { "entry": { "module": "/assets/entry.client-Ci0SuX4g.js", "imports": ["/assets/chunk-OIYGIGL5-BIqew9Tp.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": true, "module": "/assets/root-CsRbasEz.js", "imports": ["/assets/chunk-OIYGIGL5-BIqew9Tp.js", "/assets/proxy-BN7GxTr_.js"], "css": ["/assets/root-xXM-yhIG.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/layouts/homelayout": { "id": "routes/layouts/homelayout", "parentId": "root", "path": void 0, "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/homelayout-DPWF8U8E.js", "imports": ["/assets/chunk-OIYGIGL5-BIqew9Tp.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/home/index": { "id": "routes/home/index", "parentId": "routes/layouts/homelayout", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/index-DDxEnO_9.js", "imports": ["/assets/index-DxYj5hzz.js", "/assets/chunk-OIYGIGL5-BIqew9Tp.js", "/assets/TwoColumnLayout-DO8Pf6H6.js", "/assets/proxy-BN7GxTr_.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/about/index": { "id": "routes/about/index", "parentId": "routes/layouts/homelayout", "path": "about", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/index-BGqeqAVY.js", "imports": ["/assets/chunk-OIYGIGL5-BIqew9Tp.js", "/assets/TwoColumnLayout-DO8Pf6H6.js", "/assets/proxy-BN7GxTr_.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/videos/index": { "id": "routes/videos/index", "parentId": "routes/layouts/homelayout", "path": "videos", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/index-BDvIfddO.js", "imports": ["/assets/chunk-OIYGIGL5-BIqew9Tp.js", "/assets/TwoColumnLayout-DO8Pf6H6.js", "/assets/proxy-BN7GxTr_.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/show/index": { "id": "routes/show/index", "parentId": "routes/layouts/homelayout", "path": "show", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/index-CAmsDwR3.js", "imports": ["/assets/chunk-OIYGIGL5-BIqew9Tp.js", "/assets/TwoColumnLayout-DO8Pf6H6.js", "/assets/proxy-BN7GxTr_.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/contact/index": { "id": "routes/contact/index", "parentId": "routes/layouts/homelayout", "path": "contact", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/index-EIGvUN7Q.js", "imports": ["/assets/chunk-OIYGIGL5-BIqew9Tp.js", "/assets/TwoColumnLayout-DO8Pf6H6.js", "/assets/proxy-BN7GxTr_.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 } }, "url": "/assets/manifest-2ab9d371.js", "version": "2ab9d371", "sri": void 0 };
 const assetsBuildDirectory = "build/client";
 const basename = "/";
 const future = { "v8_middleware": false, "unstable_optimizeDeps": false, "unstable_splitRouteModules": false, "unstable_subResourceIntegrity": false, "unstable_viteEnvironmentApi": false };
