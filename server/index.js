@@ -721,88 +721,13 @@ const HomePage = () => {
     })]
   });
 };
-const index$4 = UNSAFE_withComponentProps(HomePage);
+const index = UNSAFE_withComponentProps(HomePage);
 const route2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  default: index$4,
+  default: index,
   meta
 }, Symbol.toStringTag, { value: "Module" }));
-const AboutPage = () => {
-  return /* @__PURE__ */ jsx(TwoColumnLayout, {
-    h2: "about",
-    backgroundColor: "bg-darkblue",
-    leftChildren: /* @__PURE__ */ jsx("div", {
-      className: "pic",
-      children: "Pic Here"
-    }),
-    rightChildren: /* @__PURE__ */ jsx("div", {
-      className: "text-banana",
-      children: 'St Moore is a Hollywood native theatrical synthpop singer producer living in Chicago.  She has performed throughout the US and released two E.P.s as "Skates" before changing her name to St Moore. In 2023, she re-released her self-titled Debut under the new volcanic moniker. In 2025, she released Vampires Are Trying to Steal Your Blood as a result of her tiktok followers suggestions. Her influences include Yoko Ono, Missy E., Cardi B, Laurie Anderson, 80s new wave, and comedic wackiness from all over the spectrum. St Moore drinks sparkling water harvested from active volcanoes on the moon. Tune in for her inspirational vampire spells and yogic guides to navigating the planets, STMOORE.NET and @stmooresfire on all platforms.'
-    })
-  });
-};
-const index$3 = UNSAFE_withComponentProps(AboutPage);
-const route3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-  __proto__: null,
-  default: index$3
-}, Symbol.toStringTag, { value: "Module" }));
-const VideosPage = () => {
-  return /* @__PURE__ */ jsx(TwoColumnLayout, {
-    h2: "videos",
-    backgroundColor: "bg-darkred",
-    leftChildren: /* @__PURE__ */ jsx("div", {
-      className: "pic",
-      children: "Pic Here"
-    }),
-    rightChildren: /* @__PURE__ */ jsx("div", {
-      className: "text-gray-800",
-      children: "hello"
-    })
-  });
-};
-const index$2 = UNSAFE_withComponentProps(VideosPage);
-const route4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-  __proto__: null,
-  default: index$2
-}, Symbol.toStringTag, { value: "Module" }));
-const ShowPage = (backgroundColor, h2) => {
-  return /* @__PURE__ */ jsx(TwoColumnLayout, {
-    h2: "show",
-    backgroundColor: "bg-lavender",
-    leftChildren: /* @__PURE__ */ jsx("div", {
-      className: "pic",
-      children: "Pic Here"
-    }),
-    rightChildren: /* @__PURE__ */ jsx("div", {
-      className: "text-gray-800",
-      children: 'St Moore is a Hollywood native theatrical synthpop singer producer living in Chicago.  She has performed throughout the US and released two E.P.s as "Skates" before changing her name to St Moore. In 2023, she re-released her self-titled Debut under the new volcanic moniker. In 2025, she released Vampires Are Trying to Steal Your Blood as a result of her tiktok followers suggestions. Her influences include Yoko Ono, Missy E., Cardi B, Laurie Anderson, 80s new wave, and comedic wackiness from all over the spectrum. St Moore drinks sparkling water harvested from active volcanoes on the moon. Tune in for her inspirational vampire spells and yogic guides to navigating the planets, STMOORE.NET and @stmooresfire on all platforms.'
-    })
-  });
-};
-const index$1 = UNSAFE_withComponentProps(ShowPage);
-const route5 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-  __proto__: null,
-  default: index$1
-}, Symbol.toStringTag, { value: "Module" }));
-const ContactPage = () => {
-  return /* @__PURE__ */ jsx(TwoColumnLayout, {
-    backgroundColor: "bg-darkblue",
-    leftChildren: /* @__PURE__ */ jsx("div", {
-      className: "pic",
-      children: "Pic Here"
-    }),
-    rightChildren: /* @__PURE__ */ jsx("div", {
-      className: "text-gray-800",
-      children: 'St Moore is a Hollywood native theatrical synthpop singer producer living in Chicago.  She has performed throughout the US and released two E.P.s as "Skates" before changing her name to St Moore. In 2023, she re-released her self-titled Debut under the new volcanic moniker. In 2025, she released Vampires Are Trying to Steal Your Blood as a result of her tiktok followers suggestions. Her influences include Yoko Ono, Missy E., Cardi B, Laurie Anderson, 80s new wave, and comedic wackiness from all over the spectrum. St Moore drinks sparkling water harvested from active volcanoes on the moon. Tune in for her inspirational vampire spells and yogic guides to navigating the planets, STMOORE.NET and @stmooresfire on all platforms.'
-    })
-  });
-};
-const index = UNSAFE_withComponentProps(ContactPage);
-const route6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-  __proto__: null,
-  default: index
-}, Symbol.toStringTag, { value: "Module" }));
-const serverManifest = { "entry": { "module": "/assets/entry.client-DbIbukBh.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": true, "module": "/assets/root-DHbTGMln.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js", "/assets/proxy-BYFnm-nf.js"], "css": ["/assets/root-D7tUV1S9.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/layouts/homelayout": { "id": "routes/layouts/homelayout", "parentId": "root", "path": void 0, "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": false, "module": "/assets/homelayout-D9mZhq_C.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/home/index": { "id": "routes/home/index", "parentId": "routes/layouts/homelayout", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": false, "module": "/assets/index-Bg7su4cF.js", "imports": ["/assets/index-6NhiJkIx.js", "/assets/chunk-QFMPRPBF-BJ30Xfrk.js", "/assets/TwoColumnLayout-BomJgMjl.js", "/assets/proxy-BYFnm-nf.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/about/index": { "id": "routes/about/index", "parentId": "routes/layouts/homelayout", "path": "about", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": false, "module": "/assets/index-B3ZIJMGk.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js", "/assets/TwoColumnLayout-BomJgMjl.js", "/assets/proxy-BYFnm-nf.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/videos/index": { "id": "routes/videos/index", "parentId": "routes/layouts/homelayout", "path": "videos", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": false, "module": "/assets/index-DcshTFzr.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js", "/assets/TwoColumnLayout-BomJgMjl.js", "/assets/proxy-BYFnm-nf.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/show/index": { "id": "routes/show/index", "parentId": "routes/layouts/homelayout", "path": "show", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": false, "module": "/assets/index-BsFsFd8h.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js", "/assets/TwoColumnLayout-BomJgMjl.js", "/assets/proxy-BYFnm-nf.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/contact/index": { "id": "routes/contact/index", "parentId": "routes/layouts/homelayout", "path": "contact", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": false, "module": "/assets/index-DRgfKltr.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js", "/assets/TwoColumnLayout-BomJgMjl.js", "/assets/proxy-BYFnm-nf.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 } }, "url": "/assets/manifest-8d3bdeac.js", "version": "8d3bdeac", "sri": void 0 };
+const serverManifest = { "entry": { "module": "/assets/entry.client-DbIbukBh.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": true, "module": "/assets/root-B3qM1ZOs.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js", "/assets/proxy-BYFnm-nf.js"], "css": ["/assets/root-DfbzsQYo.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/layouts/homelayout": { "id": "routes/layouts/homelayout", "parentId": "root", "path": void 0, "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": false, "module": "/assets/homelayout-D9mZhq_C.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/home/index": { "id": "routes/home/index", "parentId": "routes/layouts/homelayout", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": false, "module": "/assets/index-RnZjPVio.js", "imports": ["/assets/index-Bu5MPhKN.js", "/assets/chunk-QFMPRPBF-BJ30Xfrk.js", "/assets/proxy-BYFnm-nf.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 } }, "url": "/assets/manifest-01e27098.js", "version": "01e27098", "sri": void 0 };
 const assetsBuildDirectory = "build/client";
 const basename = "/";
 const future = { "unstable_optimizeDeps": false, "unstable_passThroughRequests": false, "unstable_subResourceIntegrity": false, "unstable_trailingSlashAwareDataRequests": false, "unstable_previewServerPrerendering": false, "v8_middleware": false, "v8_splitRouteModules": false, "v8_viteEnvironmentApi": false };
@@ -836,38 +761,6 @@ const routes = {
     index: true,
     caseSensitive: void 0,
     module: route2
-  },
-  "routes/about/index": {
-    id: "routes/about/index",
-    parentId: "routes/layouts/homelayout",
-    path: "about",
-    index: void 0,
-    caseSensitive: void 0,
-    module: route3
-  },
-  "routes/videos/index": {
-    id: "routes/videos/index",
-    parentId: "routes/layouts/homelayout",
-    path: "videos",
-    index: void 0,
-    caseSensitive: void 0,
-    module: route4
-  },
-  "routes/show/index": {
-    id: "routes/show/index",
-    parentId: "routes/layouts/homelayout",
-    path: "show",
-    index: void 0,
-    caseSensitive: void 0,
-    module: route5
-  },
-  "routes/contact/index": {
-    id: "routes/contact/index",
-    parentId: "routes/layouts/homelayout",
-    path: "contact",
-    index: void 0,
-    caseSensitive: void 0,
-    module: route6
   }
 };
 const allowedActionOrigins = false;
