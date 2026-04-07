@@ -10,9 +10,10 @@
   },
   "dependencies": {
     "-": "^0.0.1",
+    "@emotion/is-prop-valid": "^1.4.0",
     "@react-router/node": "^7.9.2",
     "@react-router/serve": "^7.9.2",
-    "@vidstack/react": "^1.12.13",
+    "@vercel/react-router": "^1.2.6",
     "baseline-browser-mapping": "^2.9.11",
     "isbot": "^5.1.31",
     "motion": "^12.23.26",

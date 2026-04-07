@@ -1,0 +1,38 @@
+{
+  "app/assets/LayingInACaveSweet-Stmoore-edit.jpg": {
+    "file": "assets/LayingInACaveSweet-Stmoore-edit-Bhr07GPV.jpg",
+    "src": "app/assets/LayingInACaveSweet-Stmoore-edit.jpg"
+  },
+  "app/assets/MoonJamInCello_edited.jpg": {
+    "file": "assets/MoonJamInCello_edited-DDT5fi9Y.jpg",
+    "src": "app/assets/MoonJamInCello_edited.jpg"
+  },
+  "app/assets/stmoore-alienblood-cover-web.png": {
+    "file": "assets/stmoore-alienblood-cover-web-CUkl4JEr.png",
+    "src": "app/assets/stmoore-alienblood-cover-web.png"
+  },
+  "app/assets/stmoore-debut-cover-web.jpg": {
+    "file": "assets/stmoore-debut-cover-web-TVwtuzxD.jpg",
+    "src": "app/assets/stmoore-debut-cover-web.jpg"
+  },
+  "app/assets/stmoore-vampires-cover-web.png": {
+    "file": "assets/stmoore-vampires-cover-web-D3WA0fMs.png",
+    "src": "app/assets/stmoore-vampires-cover-web.png"
+  },
+  "virtual:react-router/server-build": {
+    "file": "index.js",
+    "name": "server-build",
+    "src": "virtual:react-router/server-build",
+    "isEntry": true,
+    "css": [
+      "assets/server-build-D39XM8Kz.css"
+    ],
+    "assets": [
+      "assets/stmoore-vampires-cover-web-D3WA0fMs.png",
+      "assets/stmoore-debut-cover-web-TVwtuzxD.jpg",
+      "assets/stmoore-alienblood-cover-web-CUkl4JEr.png",
+      "assets/MoonJamInCello_edited-DDT5fi9Y.jpg",
+      "assets/LayingInACaveSweet-Stmoore-edit-Bhr07GPV.jpg"
+    ]
+  }
+}
