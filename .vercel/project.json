@@ -1,0 +1,16 @@
+{
+  "projectId": "prj_g2y5AQa8nx8vZA8FuqXMGBy43nyP",
+  "orgId": "team_XtqTzErPHJewHtuuc7MoAvZZ",
+  "projectName": "stmoore-net",
+  "settings": {
+    "createdAt": 1766981256349,
+    "framework": "react-router",
+    "devCommand": null,
+    "installCommand": null,
+    "buildCommand": null,
+    "outputDirectory": "build/client",
+    "rootDirectory": null,
+    "directoryListing": false,
+    "nodeVersion": "24.x"
+  }
+}

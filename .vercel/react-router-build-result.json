@@ -1,0 +1,176 @@
+{
+  "buildManifest": {
+    "serverBundles": {
+      "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0": {
+        "id": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+        "file": "build/server/nodejs_eyJydW50aW1lIjoibm9kZWpzIn0/index.js",
+        "config": {
+          "runtime": "nodejs"
+        }
+      }
+    },
+    "routeIdToServerBundleId": {
+      "root": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/home/index": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/about/index": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/videos/index": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/show/index": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/contact/index": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0"
+    },
+    "routes": {
+      "root": {
+        "id": "root",
+        "file": "app/root.tsx",
+        "path": "",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/layouts/homelayout": {
+        "id": "routes/layouts/homelayout",
+        "parentId": "root",
+        "file": "app/routes/layouts/homelayout.tsx",
+        "config": {}
+      },
+      "routes/home/index": {
+        "id": "routes/home/index",
+        "parentId": "routes/layouts/homelayout",
+        "file": "app/routes/home/index.tsx",
+        "index": true,
+        "config": {}
+      },
+      "routes/about/index": {
+        "id": "routes/about/index",
+        "parentId": "routes/layouts/homelayout",
+        "file": "app/routes/about/index.tsx",
+        "path": "about",
+        "config": {}
+      },
+      "routes/videos/index": {
+        "id": "routes/videos/index",
+        "parentId": "routes/layouts/homelayout",
+        "file": "app/routes/videos/index.tsx",
+        "path": "videos",
+        "config": {}
+      },
+      "routes/show/index": {
+        "id": "routes/show/index",
+        "parentId": "routes/layouts/homelayout",
+        "file": "app/routes/show/index.tsx",
+        "path": "show",
+        "config": {}
+      },
+      "routes/contact/index": {
+        "id": "routes/contact/index",
+        "parentId": "routes/layouts/homelayout",
+        "file": "app/routes/contact/index.tsx",
+        "path": "contact",
+        "config": {}
+      }
+    }
+  },
+  "reactRouterConfig": {
+    "appDirectory": "/Users/melissastmoore/Desktop/code/stmoore.net/app",
+    "basename": "/",
+    "buildDirectory": "/Users/melissastmoore/Desktop/code/stmoore.net/build",
+    "future": {
+      "unstable_optimizeDeps": false,
+      "unstable_passThroughRequests": false,
+      "unstable_subResourceIntegrity": false,
+      "unstable_trailingSlashAwareDataRequests": false,
+      "unstable_previewServerPrerendering": false,
+      "v8_middleware": false,
+      "v8_splitRouteModules": false,
+      "v8_viteEnvironmentApi": false
+    },
+    "routes": {
+      "root": {
+        "id": "root",
+        "file": "root.tsx",
+        "path": ""
+      },
+      "routes/layouts/homelayout": {
+        "id": "routes/layouts/homelayout",
+        "parentId": "root",
+        "file": "./routes/layouts/homelayout.tsx"
+      },
+      "routes/home/index": {
+        "id": "routes/home/index",
+        "parentId": "routes/layouts/homelayout",
+        "file": "routes/home/index.tsx",
+        "index": true
+      },
+      "routes/about/index": {
+        "id": "routes/about/index",
+        "parentId": "routes/layouts/homelayout",
+        "file": "./routes/about/index.tsx",
+        "path": "about"
+      },
+      "routes/videos/index": {
+        "id": "routes/videos/index",
+        "parentId": "routes/layouts/homelayout",
+        "file": "./routes/videos/index.tsx",
+        "path": "videos"
+      },
+      "routes/show/index": {
+        "id": "routes/show/index",
+        "parentId": "routes/layouts/homelayout",
+        "file": "./routes/show/index.tsx",
+        "path": "show"
+      },
+      "routes/contact/index": {
+        "id": "routes/contact/index",
+        "parentId": "routes/layouts/homelayout",
+        "file": "./routes/contact/index.tsx",
+        "path": "contact"
+      }
+    },
+    "routeDiscovery": {
+      "mode": "lazy",
+      "manifestPath": "/__manifest"
+    },
+    "serverBuildFile": "index.js",
+    "serverModuleFormat": "esm",
+    "ssr": true,
+    "allowedActionOrigins": false,
+    "unstable_routeConfig": [
+      {
+        "id": "root",
+        "path": "",
+        "file": "root.tsx",
+        "children": [
+          {
+            "file": "./routes/layouts/homelayout.tsx",
+            "children": [
+              {
+                "file": "routes/home/index.tsx",
+                "index": true
+              },
+              {
+                "file": "./routes/about/index.tsx",
+                "path": "about"
+              },
+              {
+                "file": "./routes/videos/index.tsx",
+                "path": "videos"
+              },
+              {
+                "file": "./routes/show/index.tsx",
+                "path": "show"
+              },
+              {
+                "file": "./routes/contact/index.tsx",
+                "path": "contact"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "viteConfig": {
+    "build": {
+      "assetsDir": "assets"
+    }
+  }
+}
