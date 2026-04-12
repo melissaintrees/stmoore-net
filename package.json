@@ -9,7 +9,6 @@
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
-    "-": "^0.0.1",
     "@emotion/is-prop-valid": "^1.4.0",
     "@react-router/node": "^7.9.2",
     "@react-router/serve": "^7.9.2",
