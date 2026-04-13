@@ -7,8 +7,8 @@ import { motion } from "motion/react"
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const mBase = "transition text-darkblue font-semibold  font-normal text-1xl";
-  const mActive = "transition text-darkblue font-semibold hover:text-white font-normal text-1xl";
+  const mBase = "transition text-black font-semibold font-normal text-[18px]";
+  const mActive = "transition text-black font-semibold hover:text-white font-normal text-[18px]";
   // Function to close the menu on viewport change
   const handleResize = () => {
     // Check if the screen width is larger than your mobile breakpoint (e.g., 'md')
@@ -39,7 +39,7 @@ const Navbar = () => {
   <div className=" flex items-center justify-between ">
     
  
-                <div className="flex  flex flex-col gap-4 mt-2 mb-4 md:mb-0 md:mt-0 md:flex-row md:items-center md:gap-6">
+                <div className="flex  flex flex-col gap-4 mt-2 mb-4 md:mb-0 md:mt-0 md:flex-row md:items-center md:gap-5">
               <img
                 aria-label="The Official Site for St Moore, Magical Synthpop artist "
                 src="../../st-moore-logo.png"
@@ -47,7 +47,7 @@ const Navbar = () => {
               />
                 </div>
   
-              <ul className="hidden md:flex gap-4 mt-2 mb-4 md:mb-0 md:mt-0 md:flex-row items-center ">
+              <ul className="hidden md:flex gap-3 mt-2 mb-4 md:mb-0 md:mt-0 md:flex-row items-center ">
                 <li
                   className="flex-1 items-center p-3 ">
         

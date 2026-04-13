@@ -29,13 +29,12 @@ const HomePage = () => {
           <>
             <img
               src={AlienBloodCover}
-              aria-label="cover of Alien Blood"
-              alt="A spooky glamourous painting of St Moore with blue skin and day glow eyes, and a watermelon pink background"
+
+              alt="A spooky painting of St Moore with blue skin and day glow eyes"
               className="mb-5 shadow-lg"
             />
   
             <Link
-  
               className="mt-5 text-lg py-3 px-12 outline-solid outline-4 outline-lavender hover:outline-lavender/70 cursor-pointer text-lavender hover:text-lavender/70 font-light transition-colors duration-300"
               target="blank"
               to="https://stmoore.bandcamp.com/track/alien-blood"
@@ -66,7 +65,7 @@ const HomePage = () => {
           <>
             <img
               src={DebutCover}
-              alt="St Moore is laying on a couch and playing a giant spoon like a guitar and with a giant alien in an 80s blue dress"
+              alt="St Moore is playing a giant spoon on a couch and with a giant alien in a prom dress"
               className="mb-5 shadow-lg"
             />
             <Link
@@ -136,13 +135,13 @@ const HomePage = () => {
             <img
               className="shadow-lg object-cover"
               src={BioPic}
-              alt="St Moore is a wearing an oversized heavy metal hoodie and high heeled boots with a purple metallic background"
+              alt="St Moore is a wearing an oversized heavy metal hoodie with a purple metallic background"
             />
           </>
         }
         rightChildren={
           <>
-            <div className="text-white font-medium text-xl m-4">
+            <div className="text-white font-medium text-2xl m-4">
               St Moore is a Chicago-based synthpop singer, producer, and
               performer. FKA Melissa Dungan, the Hollywood native performed
               throughout the US and released two E.P.s as "Skates," sometimes
@@ -180,7 +179,7 @@ const HomePage = () => {
                 </a>
 
                 <Link
-                  className="text-lg mt-5 py-3 px-8 outline-solid outline-4 outline-darkblue font-medium hover:text-darkblue/70 hover:outline-darkblue/70 text-darkblue cursor-pointer font-medium transition-colors duration-300"
+                  className="text-lg mt-5 py-3 px-8 outline-solid outline-4 outline-darkblue font-medium hover:text-darkblue/70 hover:outline-darkblue/70 text-darkblue bg-white cursor-pointer font-medium transition-colors duration-300"
                   target="blank"
                   
                   to="https://stmoore.bandcamp.com/"
@@ -194,9 +193,9 @@ const HomePage = () => {
       />
       <OneColumnLayout
         backgroundColor="bg-banana"
-        h2="Show"
+        h2="Shows"
         id="show"
-        h2Color="text-watermelon"
+        h2Color="text-darkblue"
         children={
           <>
             <img
