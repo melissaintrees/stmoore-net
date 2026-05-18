@@ -29,6 +29,7 @@ const HomePage = () => {
           <>
             <img
               src={AlienBloodCover}
+
               alt="A spooky painting of St Moore with blue skin and day glow eyes"
               className="mb-5 shadow-lg"
             />
@@ -38,7 +39,7 @@ const HomePage = () => {
               target="blank"
               to="https://hypeddit.com/stmoore/alienblood"
             >
-              <h1>NEW SONG!</h1>
+              <h1>Pre Save Alien Blood</h1>
             </Link>
             
           </>
