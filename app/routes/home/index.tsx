@@ -29,7 +29,6 @@ const HomePage = () => {
           <>
             <img
               src={AlienBloodCover}
-
               alt="A spooky painting of St Moore with blue skin and day glow eyes"
               className="mb-5 shadow-lg"
             />
@@ -37,7 +36,7 @@ const HomePage = () => {
             <Link
               className="mt-5 text-lg py-3 px-12 outline-solid outline-4 outline-lavender hover:outline-lavender/70 cursor-pointer text-lavender hover:text-lavender/70 font-light transition-colors duration-300"
               target="blank"
-              to="https://stmoore.bandcamp.com/track/alien-blood"
+              to="https://hypeddit.com/stmoore/alienblood"
             >
               <h1>NEW SONG!</h1>
             </Link>
