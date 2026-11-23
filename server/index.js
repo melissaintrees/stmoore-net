@@ -349,16 +349,16 @@ const Spinner = ({
   const sizeClasses = {
     sm: "h-4 w-4 border-2",
     md: "h-8 w-8 border-4",
-    lg: "h-12 w-12 border-4"
+    lg: "h-16 w-16 border-4"
   };
-  return /* @__PURE__ */ jsxs("div", { role: "status", className: `inline-flex items-center justify-center ${className}`, children: [
+  return /* @__PURE__ */ jsxs("div", { role: "status", className: `items-center justify-center align-center ${className}`, children: [
     /* @__PURE__ */ jsx(
       "div",
       {
-        className: `${sizeClasses[size]} animate-spin rounded-full border-blue-600 border-t-transparent`
+        className: `${sizeClasses[size]} animate-spin rounded-full border-rose-500 border-t-transparent`
       }
     ),
-    /* @__PURE__ */ jsx("span", { className: "sr-only", children: "Loading..." })
+    /* @__PURE__ */ jsx("div", { className: "text-banana mt-6", children: "Loading...." })
   ] });
 };
 const links = () => [{
@@ -385,12 +385,17 @@ function Layout({
 }) {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    if (!isLoading) return;
+    const alreadyLoaded = sessionStorage.getItem("frontPageLoaded") === "true";
+    if (alreadyLoaded) {
+      setIsLoading(false);
+      return;
+    }
     const timer = setTimeout(() => {
+      sessionStorage.setItem("frontPageLoaded", "true");
       setIsLoading(false);
     }, 3e3);
     return () => clearTimeout(timer);
-  }, [isLoading]);
+  }, []);
   return /* @__PURE__ */ jsxs("html", {
     lang: "en",
     children: [/* @__PURE__ */ jsxs("head", {
@@ -403,7 +408,9 @@ function Layout({
     }), /* @__PURE__ */ jsxs("body", {
       children: [isLoading ? /* @__PURE__ */ jsx("div", {
         className: "flex items-center justify-center h-screen",
-        children: /* @__PURE__ */ jsx(Spinner, {})
+        children: /* @__PURE__ */ jsx(Spinner, {
+          size: "lg"
+        })
       }) : /* @__PURE__ */ jsxs(Fragment, {
         children: [/* @__PURE__ */ jsx(Navbar, {}), /* @__PURE__ */ jsx("main", {
           children
@@ -579,200 +586,212 @@ function meta({}) {
   }];
 }
 const HomePage = () => {
-  return /* @__PURE__ */ jsxs(Fragment, {
-    children: [/* @__PURE__ */ jsx(ThreeColumnLayout, {
-      backgroundColor: "bg-darkblue",
-      leftChildren: /* @__PURE__ */ jsxs(Fragment, {
-        children: [/* @__PURE__ */ jsx("a", {
-          href: "https://hypeddit.com/stmoore/alienblood",
-          target: "_blank",
-          rel: "noopener noreferrer",
-          children: /* @__PURE__ */ jsx("img", {
-            src: AlienBloodCover,
-            alt: "A spooky painting of St Moore with blue skin and day glow eyes",
-            className: "mb-5 shadow-lg"
-          })
-        }), /* @__PURE__ */ jsx(Link, {
-          className: "mt-5 text-lg py-3 px-12 outline-solid outline-4 outline-lavender hover:outline-lavender/70 cursor-pointer text-lavender hover:text-lavender/70 font-light transition-colors duration-300",
-          target: "blank",
-          to: "https://hypeddit.com/stmoore/alienblood",
-          children: /* @__PURE__ */ jsx("h1", {
+  return /* @__PURE__ */ jsx(Fragment, {
+    children: /* @__PURE__ */ jsxs(motion.div, {
+      initial: {
+        opacity: 0
+      },
+      whileInView: {
+        opacity: 1
+      },
+      transition: {
+        duration: 0.7,
+        ease: "easeIn"
+      },
+      children: [/* @__PURE__ */ jsx(ThreeColumnLayout, {
+        backgroundColor: "bg-darkblue",
+        leftChildren: /* @__PURE__ */ jsxs(Fragment, {
+          children: [/* @__PURE__ */ jsx("a", {
+            href: "https://hypeddit.com/stmoore/alienblood",
+            target: "_blank",
+            rel: "noopener noreferrer",
+            children: /* @__PURE__ */ jsx("img", {
+              src: AlienBloodCover,
+              alt: "A spooky painting of St Moore with blue skin and day glow eyes",
+              className: "mb-5 shadow-lg"
+            })
+          }), /* @__PURE__ */ jsx(Link, {
+            className: "mt-5 text-lg py-3 px-12 outline-solid outline-4 outline-lavender hover:outline-lavender/70 cursor-pointer text-lavender hover:text-lavender/70 font-light transition-colors duration-300",
+            target: "blank",
+            to: "https://hypeddit.com/stmoore/alienblood",
+            children: /* @__PURE__ */ jsx("h1", {
+              children: "LISTEN HERE"
+            })
+          })]
+        }),
+        middleChildren: /* @__PURE__ */ jsxs(Fragment, {
+          children: [/* @__PURE__ */ jsx("a", {
+            href: "https://www.submithub.com/link/st-moore-vampires-are-trying-to-steal-your-blood-o",
+            target: "_blank",
+            rel: "noopener noreferrer",
+            children: /* @__PURE__ */ jsx("img", {
+              src: VampireCover,
+              alt: "Cover image of St Moore, with light brown hair and a pink dress, as a vampire",
+              className: "mb-5 shadow-lg"
+            })
+          }), /* @__PURE__ */ jsx(Link, {
+            className: "mt-5 text-lg py-3 px-12 outline-solid outline-4 outline-lavender hover:outline-lavender/70 cursor-pointer text-lavender hover:text-lavender/70 font-light transition-colors duration-300",
+            target: "blank",
+            to: "https://www.submithub.com/link/st-moore-vampires-are-trying-to-steal-your-blood-o",
             children: "LISTEN HERE"
-          })
-        })]
-      }),
-      middleChildren: /* @__PURE__ */ jsxs(Fragment, {
-        children: [/* @__PURE__ */ jsx("a", {
-          href: "https://www.submithub.com/link/st-moore-vampires-are-trying-to-steal-your-blood-o",
-          target: "_blank",
-          rel: "noopener noreferrer",
-          children: /* @__PURE__ */ jsx("img", {
-            src: VampireCover,
-            alt: "Cover image of St Moore, with light brown hair and a pink dress, as a vampire",
-            className: "mb-5 shadow-lg"
-          })
-        }), /* @__PURE__ */ jsx(Link, {
-          className: "mt-5 text-lg py-3 px-12 outline-solid outline-4 outline-lavender hover:outline-lavender/70 cursor-pointer text-lavender hover:text-lavender/70 font-light transition-colors duration-300",
-          target: "blank",
-          to: "https://www.submithub.com/link/st-moore-vampires-are-trying-to-steal-your-blood-o",
-          children: "LISTEN HERE"
-        })]
-      }),
-      rightChildren: /* @__PURE__ */ jsxs(Fragment, {
-        children: [/* @__PURE__ */ jsx("a", {
-          href: "https://www.submithub.com/link/st-moore-debut",
-          target: "_blank",
-          rel: "noopener noreferrer",
-          children: /* @__PURE__ */ jsx("img", {
-            src: DebutCover,
-            alt: "St Moore is playing a giant spoon on a couch and with a giant alien in a prom dress",
-            className: "mb-5 shadow-lg"
-          })
-        }), /* @__PURE__ */ jsx(Link, {
-          className: "text-lg mt-5 py-3 px-12 outline-solid outline-4 outline-lavender hover:outline-lavender/70 cursor-pointer text-lavender hover:text-lavender/70 font-light transition-colors duration-300",
-          target: "blank",
-          to: "https://www.submithub.com/link/st-moore-debut",
-          children: "LISTEN NOW"
-        })]
-      })
-    }), /* @__PURE__ */ jsx(TwoColumnLayout, {
-      backgroundColor: "bg-lavender",
-      h2: "Videos",
-      id: "videos",
-      h2Color: "darkblue",
-      columnGap: "50",
-      leftChildren: /* @__PURE__ */ jsxs(Fragment, {
-        children: [/* @__PURE__ */ jsx(ReactPlayer, {
-          className: "mb-10",
-          style: {
-            width: "150%",
-            height: "auto",
-            aspectRatio: "16/9"
-          },
-          src: "https://youtu.be/Et3IoYRKkZ8"
-        }), /* @__PURE__ */ jsx(ReactPlayer, {
-          style: {
-            width: "150%",
-            height: "auto",
-            aspectRatio: "16/9"
-          },
-          src: "https://www.youtube.com/embed/P-3VxVttEHo?si=y4hA97h5MXi8h9Yn"
-        })]
-      }),
-      rightChildren: /* @__PURE__ */ jsxs(Fragment, {
-        children: [/* @__PURE__ */ jsx(ReactPlayer, {
-          className: "mb-10",
-          style: {
-            width: "150%",
-            height: "auto",
-            aspectRatio: "16/9"
-          },
-          src: "https://www.youtube.com/watch?v=wp_Mp_13EIs&t=3s"
-        }), /* @__PURE__ */ jsx(ReactPlayer, {
-          "aria-hidden": "true",
-          "aria-live": "off",
-          style: {
-            width: "150%",
-            height: "auto",
-            aspectRatio: "16/9"
-          },
-          src: "https://www.youtube.com/watch?v=_T5XCf_YDp4&t=3s"
-        })]
-      }),
-      cta: /* @__PURE__ */ jsx(Link, {
-        className: "text-lg text-darkblue mt-5 py-3 px-12 outline-solid outline-4 outline-darkblue hover:outline-darkblue/70 cursor-pointer text-darkblue hover:text-darkblue/70 font-light duration-300",
-        target: "blank",
-        "aria-label": "Link to St Moore's YouTube Channel",
-        to: "https://youtube.com/stmooresfire?sub_confirmation=1",
-        children: "SUBSCRIBE TO CHANNEL"
-      })
-    }), /* @__PURE__ */ jsx(TwoColumnLayout, {
-      backgroundColor: "bg-watermelon",
-      h2: "About",
-      id: "about",
-      h2Color: "white",
-      leftChildren: /* @__PURE__ */ jsx(Fragment, {
-        children: /* @__PURE__ */ jsx("img", {
-          className: "shadow-lg object-cover",
-          src: BioPic,
-          alt: "St Moore is a wearing an oversized heavy metal hoodie with a purple metallic background"
+          })]
+        }),
+        rightChildren: /* @__PURE__ */ jsxs(Fragment, {
+          children: [/* @__PURE__ */ jsx("a", {
+            href: "https://www.submithub.com/link/st-moore-debut",
+            target: "_blank",
+            rel: "noopener noreferrer",
+            children: /* @__PURE__ */ jsx("img", {
+              src: DebutCover,
+              alt: "St Moore is playing a giant spoon on a couch and with a giant alien in a prom dress",
+              className: "mb-5 shadow-lg"
+            })
+          }), /* @__PURE__ */ jsx(Link, {
+            className: "text-lg mt-5 py-3 px-12 outline-solid outline-4 outline-lavender hover:outline-lavender/70 cursor-pointer text-lavender hover:text-lavender/70 font-light transition-colors duration-300",
+            target: "blank",
+            to: "https://www.submithub.com/link/st-moore-debut",
+            children: "LISTEN NOW"
+          })]
         })
-      }),
-      rightChildren: /* @__PURE__ */ jsx(Fragment, {
-        children: /* @__PURE__ */ jsxs("div", {
-          className: "text-white font-medium text-2xl m-4",
-          children: ['St Moore is a Chicago-based synthpop singer, producer, and performer. FKA Melissa Dungan, the Hollywood native performed throughout the US and released two E.P.s as "Skates," sometimes going by MQ Musik and Squid Malone. ', /* @__PURE__ */ jsx("br", {
-            "aria-hidden": "true"
-          }), " ", /* @__PURE__ */ jsx("br", {
-            "aria-hidden": "true"
-          }), "In 2023, she settled on the name St Moore, and re-released her self-titled Debut. In 2025, she released Vampires Are Trying to Steal Your Blood as a result of her tiktok followers suggestions.", /* @__PURE__ */ jsx("br", {
-            "aria-hidden": "true"
-          }), " ", /* @__PURE__ */ jsx("br", {
-            "aria-hidden": "true"
-          }), 'April 5th 2026, she released single "Alien Blood" on Bandcamp and June 19th it will be available everywhere. Her influences include Astrology, Yoko Ono, Missy Elliot, Laurie Anderson, and comedic wackiness. St Moore drinks sparkling water harvested from active volcanoes on the moon.', /* @__PURE__ */ jsx("br", {
-            "aria-hidden": "true"
-          }), " ", /* @__PURE__ */ jsx("br", {
-            "aria-hidden": "true"
-          }), "Tune in for inspirational vampire spells and yogic guides to navigating the planets, @stmooresfire on all platforms and collabs at stmooresfire@gmail.com, and/or support your local synthpop weirdo below:", /* @__PURE__ */ jsxs("div", {
-            className: "mt-8 flex justify-center gap-4 text-center",
-            children: [/* @__PURE__ */ jsx("a", {
-              href: "https://www.buymeacoffee.com/stmooresfire",
-              target: "_blank",
-              children: /* @__PURE__ */ jsx("img", {
-                className: "bg-yellow mx-auto h-14 mt-5",
-                "data-name": "bmc-button",
-                "data-slug": "stmooresfire",
-                "data-emoji": "👽",
-                "data-font": "Comic",
-                "data-text": "Buy me tea ",
-                "data-outline-color": "#ffffff",
-                "data-font-color": "#ffffff",
-                src: "https://cdn.buymeacoffee.com/buttons/v2/default-violet.png",
-                alt: "Support St Moore by buying them a tea on Buy Me a Coffee"
-              })
-            }), /* @__PURE__ */ jsx(Link, {
-              className: "text-lg mt-5 py-3 px-8 outline-solid outline-4 outline-darkblue font-medium hover:text-darkblue/70 hover:outline-darkblue/70 text-darkblue bg-white cursor-pointer font-medium transition-colors duration-300",
+      }), /* @__PURE__ */ jsx(TwoColumnLayout, {
+        backgroundColor: "bg-lavender",
+        h2: "Videos",
+        id: "videos",
+        h2Color: "darkblue",
+        columnGap: "50",
+        leftChildren: /* @__PURE__ */ jsxs(Fragment, {
+          children: [/* @__PURE__ */ jsx(ReactPlayer, {
+            className: "mb-10",
+            style: {
+              width: "150%",
+              height: "auto",
+              aspectRatio: "16/9"
+            },
+            src: "https://youtu.be/Et3IoYRKkZ8"
+          }), /* @__PURE__ */ jsx(ReactPlayer, {
+            style: {
+              width: "150%",
+              height: "auto",
+              aspectRatio: "16/9"
+            },
+            src: "https://www.youtube.com/embed/P-3VxVttEHo?si=y4hA97h5MXi8h9Yn"
+          })]
+        }),
+        rightChildren: /* @__PURE__ */ jsxs(Fragment, {
+          children: [/* @__PURE__ */ jsx(ReactPlayer, {
+            className: "mb-10",
+            style: {
+              width: "150%",
+              height: "auto",
+              aspectRatio: "16/9"
+            },
+            src: "https://www.youtube.com/watch?v=wp_Mp_13EIs&t=3s"
+          }), /* @__PURE__ */ jsx(ReactPlayer, {
+            "aria-hidden": "true",
+            "aria-live": "off",
+            style: {
+              width: "150%",
+              height: "auto",
+              aspectRatio: "16/9"
+            },
+            src: "https://www.youtube.com/watch?v=_T5XCf_YDp4&t=3s"
+          })]
+        }),
+        cta: /* @__PURE__ */ jsx(Link, {
+          className: "text-lg text-darkblue mt-5 py-3 px-12 outline-solid outline-4 outline-darkblue hover:outline-darkblue/70 cursor-pointer text-darkblue hover:text-darkblue/70 font-light duration-300",
+          target: "blank",
+          "aria-label": "Link to St Moore's YouTube Channel",
+          to: "https://youtube.com/stmooresfire?sub_confirmation=1",
+          children: "SUBSCRIBE TO CHANNEL"
+        })
+      }), /* @__PURE__ */ jsx(TwoColumnLayout, {
+        backgroundColor: "bg-watermelon",
+        h2: "About",
+        id: "about",
+        h2Color: "white",
+        leftChildren: /* @__PURE__ */ jsx(Fragment, {
+          children: /* @__PURE__ */ jsx("img", {
+            className: "shadow-lg object-cover",
+            src: BioPic,
+            alt: "St Moore is a wearing an oversized heavy metal hoodie with a purple metallic background"
+          })
+        }),
+        rightChildren: /* @__PURE__ */ jsx(Fragment, {
+          children: /* @__PURE__ */ jsxs("div", {
+            className: "text-white font-medium text-2xl m-4",
+            children: ['St Moore is a Chicago-based synthpop singer, producer, and performer. FKA Melissa Dungan, the Hollywood native performed throughout the US and released two E.P.s as "Skates," sometimes going by MQ Musik and Squid Malone. ', /* @__PURE__ */ jsx("br", {
+              "aria-hidden": "true"
+            }), " ", /* @__PURE__ */ jsx("br", {
+              "aria-hidden": "true"
+            }), "In 2023, she settled on the name St Moore, and re-released her self-titled Debut. In 2025, she released Vampires Are Trying to Steal Your Blood as a result of her tiktok followers suggestions.", /* @__PURE__ */ jsx("br", {
+              "aria-hidden": "true"
+            }), " ", /* @__PURE__ */ jsx("br", {
+              "aria-hidden": "true"
+            }), 'April 5th 2026, she released single "Alien Blood" on Bandcamp and June 19th it will be available everywhere. Her influences include Astrology, Yoko Ono, Missy Elliot, Laurie Anderson, and comedic wackiness. St Moore drinks sparkling water harvested from active volcanoes on the moon.', /* @__PURE__ */ jsx("br", {
+              "aria-hidden": "true"
+            }), " ", /* @__PURE__ */ jsx("br", {
+              "aria-hidden": "true"
+            }), "Tune in for inspirational vampire spells and yogic guides to navigating the planets, @stmooresfire on all platforms and collabs at stmooresfire@gmail.com, and/or support your local synthpop weirdo below:", /* @__PURE__ */ jsxs("div", {
+              className: "mt-8 flex justify-center gap-4 text-center",
+              children: [/* @__PURE__ */ jsx("a", {
+                href: "https://www.buymeacoffee.com/stmooresfire",
+                target: "_blank",
+                children: /* @__PURE__ */ jsx("img", {
+                  className: "bg-yellow mx-auto h-14 mt-5",
+                  "data-name": "bmc-button",
+                  "data-slug": "stmooresfire",
+                  "data-emoji": "👽",
+                  "data-font": "Comic",
+                  "data-text": "Buy me tea ",
+                  "data-outline-color": "#ffffff",
+                  "data-font-color": "#ffffff",
+                  src: "https://cdn.buymeacoffee.com/buttons/v2/default-violet.png",
+                  alt: "Support St Moore by buying them a tea on Buy Me a Coffee"
+                })
+              }), /* @__PURE__ */ jsx(Link, {
+                className: "text-lg mt-5 py-3 px-8 outline-solid outline-4 outline-darkblue font-medium hover:text-darkblue/70 hover:outline-darkblue/70 text-darkblue bg-white cursor-pointer font-medium transition-colors duration-300",
+                target: "blank",
+                to: "https://stmoore.bandcamp.com/",
+                children: "BUY MUSIC ON BANDCAMP"
+              })]
+            })]
+          })
+        })
+      }), /* @__PURE__ */ jsx(OneColumnLayout, {
+        backgroundColor: "bg-banana",
+        h2: "Shows",
+        id: "show",
+        h2Color: "text-darkblue",
+        children: /* @__PURE__ */ jsxs(Fragment, {
+          children: [/* @__PURE__ */ jsx("a", {
+            "aria-label": "hidden",
+            href: "https://www.youtube.com/playlist?list=PLcd_6XBjr83eP9ELMzd8mRTYHXNNATpe2",
+            target: "_blank",
+            rel: "noopener noreferrer",
+            children: /* @__PURE__ */ jsx("img", {
+              className: " object-cover pl-10 pr-10",
+              src: BubblePic,
+              alt: "St Moore a Spacegirl on the Moon"
+            })
+          }), /* @__PURE__ */ jsxs("div", {
+            className: "mt-8 flex flex-col sm:flex-row text-center justify-center gap-5",
+            children: [/* @__PURE__ */ jsx(Link, {
+              className: "text-lg mt-5 py-3 px-12 outline-solid outline-4 outline-darkred font-medium hover:text-darkred/70 hover:outline-darkred/70 text-darkred cursor-pointer font-medium transition-colors duration-300",
               target: "blank",
-              to: "https://stmoore.bandcamp.com/",
-              children: "BUY MUSIC ON BANDCAMP"
+              "aria-label": "Link to St Moore's Sparkling Water Performance Series",
+              to: "https://www.youtube.com/playlist?list=PLcd_6XBjr83eP9ELMzd8mRTYHXNNATpe2",
+              children: "SPARKLING WATER (2024)"
+            }), /* @__PURE__ */ jsx(Link, {
+              className: "text-lg mt-5 py-3 px-12 outline-solid outline-4 outline-darkred font-medium hover:text-darkred/70 hover:outline-darkred/70 text-darkred cursor-pointer font-medium transition-colors duration-300",
+              target: "blank",
+              "aria-label": "Link to St Moore's Pandemic Performance Series, BANANAS AF",
+              to: "https://www.youtube.com/playlist?list=PLcd_6XBjr83efNqUpgp9vEr1zgwLLhBpj",
+              children: "BANANAS AF (2021)"
             })]
           })]
         })
-      })
-    }), /* @__PURE__ */ jsx(OneColumnLayout, {
-      backgroundColor: "bg-banana",
-      h2: "Shows",
-      id: "show",
-      h2Color: "text-darkblue",
-      children: /* @__PURE__ */ jsxs(Fragment, {
-        children: [/* @__PURE__ */ jsx("a", {
-          "aria-label": "hidden",
-          href: "https://www.youtube.com/playlist?list=PLcd_6XBjr83eP9ELMzd8mRTYHXNNATpe2",
-          target: "_blank",
-          rel: "noopener noreferrer",
-          children: /* @__PURE__ */ jsx("img", {
-            className: " object-cover pl-10 pr-10",
-            src: BubblePic,
-            alt: "St Moore a Spacegirl on the Moon"
-          })
-        }), /* @__PURE__ */ jsxs("div", {
-          className: "mt-8 flex flex-col sm:flex-row text-center justify-center gap-5",
-          children: [/* @__PURE__ */ jsx(Link, {
-            className: "text-lg mt-5 py-3 px-12 outline-solid outline-4 outline-darkred font-medium hover:text-darkred/70 hover:outline-darkred/70 text-darkred cursor-pointer font-medium transition-colors duration-300",
-            target: "blank",
-            "aria-label": "Link to St Moore's Sparkling Water Performance Series",
-            to: "https://www.youtube.com/playlist?list=PLcd_6XBjr83eP9ELMzd8mRTYHXNNATpe2",
-            children: "SPARKLING WATER (2024)"
-          }), /* @__PURE__ */ jsx(Link, {
-            className: "text-lg mt-5 py-3 px-12 outline-solid outline-4 outline-darkred font-medium hover:text-darkred/70 hover:outline-darkred/70 text-darkred cursor-pointer font-medium transition-colors duration-300",
-            target: "blank",
-            "aria-label": "Link to St Moore's Pandemic Performance Series, BANANAS AF",
-            to: "https://www.youtube.com/playlist?list=PLcd_6XBjr83efNqUpgp9vEr1zgwLLhBpj",
-            children: "BANANAS AF (2021)"
-          })]
-        })]
-      })
-    })]
+      })]
+    })
   });
 };
 const index$4 = UNSAFE_withComponentProps(HomePage);
@@ -856,7 +875,7 @@ const route6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
   __proto__: null,
   default: index
 }, Symbol.toStringTag, { value: "Module" }));
-const serverManifest = { "entry": { "module": "/assets/entry.client-DbIbukBh.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": true, "module": "/assets/root-Dk0_QHNj.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js", "/assets/proxy-BYFnm-nf.js"], "css": ["/assets/root-M6LNONjm.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/layouts/homelayout": { "id": "routes/layouts/homelayout", "parentId": "root", "path": void 0, "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": false, "module": "/assets/homelayout-D9mZhq_C.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/home/index": { "id": "routes/home/index", "parentId": "routes/layouts/homelayout", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": false, "module": "/assets/index-D59BpE4n.js", "imports": ["/assets/index-5u8_ps80.js", "/assets/chunk-QFMPRPBF-BJ30Xfrk.js", "/assets/TwoColumnLayout-BomJgMjl.js", "/assets/proxy-BYFnm-nf.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/about/index": { "id": "routes/about/index", "parentId": "routes/layouts/homelayout", "path": "about", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": false, "module": "/assets/index-B3ZIJMGk.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js", "/assets/TwoColumnLayout-BomJgMjl.js", "/assets/proxy-BYFnm-nf.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/videos/index": { "id": "routes/videos/index", "parentId": "routes/layouts/homelayout", "path": "videos", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": false, "module": "/assets/index-DcshTFzr.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js", "/assets/TwoColumnLayout-BomJgMjl.js", "/assets/proxy-BYFnm-nf.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/show/index": { "id": "routes/show/index", "parentId": "routes/layouts/homelayout", "path": "show", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": false, "module": "/assets/index-BsFsFd8h.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js", "/assets/TwoColumnLayout-BomJgMjl.js", "/assets/proxy-BYFnm-nf.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/contact/index": { "id": "routes/contact/index", "parentId": "routes/layouts/homelayout", "path": "contact", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": false, "module": "/assets/index-DRgfKltr.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js", "/assets/TwoColumnLayout-BomJgMjl.js", "/assets/proxy-BYFnm-nf.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 } }, "url": "/assets/manifest-69a75e45.js", "version": "69a75e45", "sri": void 0 };
+const serverManifest = { "entry": { "module": "/assets/entry.client-DbIbukBh.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": true, "module": "/assets/root-BXzsPhiI.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js", "/assets/proxy-BYFnm-nf.js"], "css": ["/assets/root-6wmfaCau.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/layouts/homelayout": { "id": "routes/layouts/homelayout", "parentId": "root", "path": void 0, "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": false, "module": "/assets/homelayout-D9mZhq_C.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/home/index": { "id": "routes/home/index", "parentId": "routes/layouts/homelayout", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": false, "module": "/assets/index-cnCv_sYJ.js", "imports": ["/assets/index-DXMuj6i-.js", "/assets/chunk-QFMPRPBF-BJ30Xfrk.js", "/assets/TwoColumnLayout-BomJgMjl.js", "/assets/proxy-BYFnm-nf.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/about/index": { "id": "routes/about/index", "parentId": "routes/layouts/homelayout", "path": "about", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": false, "module": "/assets/index-B3ZIJMGk.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js", "/assets/TwoColumnLayout-BomJgMjl.js", "/assets/proxy-BYFnm-nf.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/videos/index": { "id": "routes/videos/index", "parentId": "routes/layouts/homelayout", "path": "videos", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": false, "module": "/assets/index-DcshTFzr.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js", "/assets/TwoColumnLayout-BomJgMjl.js", "/assets/proxy-BYFnm-nf.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/show/index": { "id": "routes/show/index", "parentId": "routes/layouts/homelayout", "path": "show", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": false, "module": "/assets/index-BsFsFd8h.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js", "/assets/TwoColumnLayout-BomJgMjl.js", "/assets/proxy-BYFnm-nf.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/contact/index": { "id": "routes/contact/index", "parentId": "routes/layouts/homelayout", "path": "contact", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": false, "module": "/assets/index-DRgfKltr.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js", "/assets/TwoColumnLayout-BomJgMjl.js", "/assets/proxy-BYFnm-nf.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 } }, "url": "/assets/manifest-c93a3985.js", "version": "c93a3985", "sri": void 0 };
 const assetsBuildDirectory = "build/client";
 const basename = "/";
 const future = { "unstable_optimizeDeps": false, "unstable_passThroughRequests": false, "unstable_subResourceIntegrity": false, "unstable_trailingSlashAwareDataRequests": false, "unstable_previewServerPrerendering": false, "v8_middleware": false, "v8_splitRouteModules": false, "v8_viteEnvironmentApi": false };
