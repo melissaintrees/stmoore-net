@@ -7,11 +7,16 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
+import { useState, useEffect } from "react";
 
 import type { Route } from "./+types/root";
 import "./app.css";
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Spinner from './components/Spinner';
+
+
+
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -34,6 +39,22 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export function Layout({ children }: { children: React.ReactNode }) {
+
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+    useEffect(() => {
+    if (!isLoading) return;
+
+    // Simulate a 3-second loading delay
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+
+    // Cleanup timer if the component unmounts early
+    return () => clearTimeout(timer);
+  }, [isLoading]);
+
+  
+
   return (
     <html lang="en">
       <head>
@@ -43,13 +64,22 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <Navbar /> 
-        <main>
-          {children}
-        </main>
-       
+        {isLoading ? (
+          <div className="flex items-center justify-center h-screen">
+            <Spinner />
+          </div>
+        ) : (
+          <>
+            <Navbar />
+            <main>
+            {children}
+          </main>
+    
         <Footer />
-        <ScrollRestoration />
+   
+        </>
+            )}
+       <ScrollRestoration />
         <Scripts />
       </body>
     </html>
