@@ -15,7 +15,7 @@ import OneColumnLayout from "~/components/OneColumnLayout";
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "St Moore | Welcome" },
-    { name: "description", content: "Synthpop to Elevate your mystery" },
+    { name: "description", content: "Synthpop to elevate your weirdness" },
   ];
 }
 
@@ -27,31 +27,32 @@ const HomePage = () => {
         backgroundColor="bg-darkblue"
         leftChildren={
           <>
+          <a href="https://hypeddit.com/stmoore/alienblood" target="_blank" rel="noopener noreferrer">
             <img
               src={AlienBloodCover}
-
               alt="A spooky painting of St Moore with blue skin and day glow eyes"
               className="mb-5 shadow-lg"
             />
-  
+          </a>
             <Link
               className="mt-5 text-lg py-3 px-12 outline-solid outline-4 outline-lavender hover:outline-lavender/70 cursor-pointer text-lavender hover:text-lavender/70 font-light transition-colors duration-300"
               target="blank"
               to="https://hypeddit.com/stmoore/alienblood"
             >
-              <h1>Pre Save Alien Blood</h1>
+              <h1>LISTEN HERE</h1>
             </Link>
             
           </>
         }
          middleChildren={
           <>
-            <img
-              src={VampireCover}
-              alt="Cover image of St Moore, with light brown hair and a pink dress, as a vampire"
-              className="mb-5 shadow-lg"
-            />
-  
+            <a href="https://www.submithub.com/link/st-moore-vampires-are-trying-to-steal-your-blood-o" target="_blank" rel="noopener noreferrer">
+              <img
+                src={VampireCover}
+                alt="Cover image of St Moore, with light brown hair and a pink dress, as a vampire"
+                className="mb-5 shadow-lg"
+              />
+            </a>
             <Link
               className="mt-5 text-lg py-3 px-12 outline-solid outline-4 outline-lavender hover:outline-lavender/70 cursor-pointer text-lavender hover:text-lavender/70 font-light transition-colors duration-300"
               target="blank"
@@ -63,11 +64,13 @@ const HomePage = () => {
         }
         rightChildren={
           <>
+           <a href="https://www.submithub.com/link/st-moore-debut" target="_blank" rel="noopener noreferrer">             
             <img
               src={DebutCover}
               alt="St Moore is playing a giant spoon on a couch and with a giant alien in a prom dress"
               className="mb-5 shadow-lg"
             />
+               </a>
             <Link
               className="text-lg mt-5 py-3 px-12 outline-solid outline-4 outline-lavender hover:outline-lavender/70 cursor-pointer text-lavender hover:text-lavender/70 font-light transition-colors duration-300"
               target="blank"
@@ -75,6 +78,7 @@ const HomePage = () => {
             >
               LISTEN NOW
             </Link>
+            
           </>
         }
       />
@@ -150,7 +154,7 @@ const HomePage = () => {
               self-titled Debut. In 2025, she released Vampires Are Trying to
               Steal Your Blood as a result of her tiktok followers suggestions.
               <br aria-hidden="true" /> <br aria-hidden="true" />
-              April 5th, she released single "Alien Blood" on Bandcamp and May 20th it will
+              April 5th 2026, she released single "Alien Blood" on Bandcamp and June 19th it will
               be available everywhere. Her influences include Astrology, Yoko Ono, Missy Elliot, Laurie
               Anderson, and comedic wackiness. St Moore drinks sparkling water
               harvested from active volcanoes on the moon.
@@ -198,11 +202,13 @@ const HomePage = () => {
         h2Color="text-darkblue"
         children={
           <>
-            <img
-              className=" object-cover pl-10 pr-10"
-              src={BubblePic}
-              alt="St Moore a Spacegirl on the Moon"
-            />
+            <a aria-label="hidden" href="https://www.youtube.com/playlist?list=PLcd_6XBjr83eP9ELMzd8mRTYHXNNATpe2" target="_blank" rel="noopener noreferrer">
+              <img
+                className=" object-cover pl-10 pr-10"
+                src={BubblePic}
+                alt="St Moore a Spacegirl on the Moon"
+              />
+            </a>
             <div className="mt-8 flex flex-col sm:flex-row text-center justify-center gap-5">
             <Link
               className="text-lg mt-5 py-3 px-12 outline-solid outline-4 outline-darkred font-medium hover:text-darkred/70 hover:outline-darkred/70 text-darkred cursor-pointer font-medium transition-colors duration-300"
