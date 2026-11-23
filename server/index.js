@@ -543,7 +543,7 @@ function meta({}) {
     title: "St Moore | Welcome"
   }, {
     name: "description",
-    content: "Synthpop to Elevate your mystery"
+    content: "Synthpop to elevate your weirdness"
   }];
 }
 const HomePage = () => {
@@ -551,24 +551,34 @@ const HomePage = () => {
     children: [/* @__PURE__ */ jsx(ThreeColumnLayout, {
       backgroundColor: "bg-darkblue",
       leftChildren: /* @__PURE__ */ jsxs(Fragment, {
-        children: [/* @__PURE__ */ jsx("img", {
-          src: AlienBloodCover,
-          alt: "A spooky painting of St Moore with blue skin and day glow eyes",
-          className: "mb-5 shadow-lg"
+        children: [/* @__PURE__ */ jsx("a", {
+          href: "https://hypeddit.com/stmoore/alienblood",
+          target: "_blank",
+          rel: "noopener noreferrer",
+          children: /* @__PURE__ */ jsx("img", {
+            src: AlienBloodCover,
+            alt: "A spooky painting of St Moore with blue skin and day glow eyes",
+            className: "mb-5 shadow-lg"
+          })
         }), /* @__PURE__ */ jsx(Link, {
           className: "mt-5 text-lg py-3 px-12 outline-solid outline-4 outline-lavender hover:outline-lavender/70 cursor-pointer text-lavender hover:text-lavender/70 font-light transition-colors duration-300",
           target: "blank",
           to: "https://hypeddit.com/stmoore/alienblood",
           children: /* @__PURE__ */ jsx("h1", {
-            children: "Pre Save Alien Blood"
+            children: "LISTEN HERE"
           })
         })]
       }),
       middleChildren: /* @__PURE__ */ jsxs(Fragment, {
-        children: [/* @__PURE__ */ jsx("img", {
-          src: VampireCover,
-          alt: "Cover image of St Moore, with light brown hair and a pink dress, as a vampire",
-          className: "mb-5 shadow-lg"
+        children: [/* @__PURE__ */ jsx("a", {
+          href: "https://www.submithub.com/link/st-moore-vampires-are-trying-to-steal-your-blood-o",
+          target: "_blank",
+          rel: "noopener noreferrer",
+          children: /* @__PURE__ */ jsx("img", {
+            src: VampireCover,
+            alt: "Cover image of St Moore, with light brown hair and a pink dress, as a vampire",
+            className: "mb-5 shadow-lg"
+          })
         }), /* @__PURE__ */ jsx(Link, {
           className: "mt-5 text-lg py-3 px-12 outline-solid outline-4 outline-lavender hover:outline-lavender/70 cursor-pointer text-lavender hover:text-lavender/70 font-light transition-colors duration-300",
           target: "blank",
@@ -577,10 +587,15 @@ const HomePage = () => {
         })]
       }),
       rightChildren: /* @__PURE__ */ jsxs(Fragment, {
-        children: [/* @__PURE__ */ jsx("img", {
-          src: DebutCover,
-          alt: "St Moore is playing a giant spoon on a couch and with a giant alien in a prom dress",
-          className: "mb-5 shadow-lg"
+        children: [/* @__PURE__ */ jsx("a", {
+          href: "https://www.submithub.com/link/st-moore-debut",
+          target: "_blank",
+          rel: "noopener noreferrer",
+          children: /* @__PURE__ */ jsx("img", {
+            src: DebutCover,
+            alt: "St Moore is playing a giant spoon on a couch and with a giant alien in a prom dress",
+            className: "mb-5 shadow-lg"
+          })
         }), /* @__PURE__ */ jsx(Link, {
           className: "text-lg mt-5 py-3 px-12 outline-solid outline-4 outline-lavender hover:outline-lavender/70 cursor-pointer text-lavender hover:text-lavender/70 font-light transition-colors duration-300",
           target: "blank",
@@ -662,7 +677,7 @@ const HomePage = () => {
             "aria-hidden": "true"
           }), " ", /* @__PURE__ */ jsx("br", {
             "aria-hidden": "true"
-          }), 'April 5th, she released single "Alien Blood" on Bandcamp and May 20th it will be available everywhere. Her influences include Astrology, Yoko Ono, Missy Elliot, Laurie Anderson, and comedic wackiness. St Moore drinks sparkling water harvested from active volcanoes on the moon.', /* @__PURE__ */ jsx("br", {
+          }), 'April 5th 2026, she released single "Alien Blood" on Bandcamp and June 19th it will be available everywhere. Her influences include Astrology, Yoko Ono, Missy Elliot, Laurie Anderson, and comedic wackiness. St Moore drinks sparkling water harvested from active volcanoes on the moon.', /* @__PURE__ */ jsx("br", {
             "aria-hidden": "true"
           }), " ", /* @__PURE__ */ jsx("br", {
             "aria-hidden": "true"
@@ -698,10 +713,16 @@ const HomePage = () => {
       id: "show",
       h2Color: "text-darkblue",
       children: /* @__PURE__ */ jsxs(Fragment, {
-        children: [/* @__PURE__ */ jsx("img", {
-          className: " object-cover pl-10 pr-10",
-          src: BubblePic,
-          alt: "St Moore a Spacegirl on the Moon"
+        children: [/* @__PURE__ */ jsx("a", {
+          "aria-label": "hidden",
+          href: "https://www.youtube.com/playlist?list=PLcd_6XBjr83eP9ELMzd8mRTYHXNNATpe2",
+          target: "_blank",
+          rel: "noopener noreferrer",
+          children: /* @__PURE__ */ jsx("img", {
+            className: " object-cover pl-10 pr-10",
+            src: BubblePic,
+            alt: "St Moore a Spacegirl on the Moon"
+          })
         }), /* @__PURE__ */ jsxs("div", {
           className: "mt-8 flex flex-col sm:flex-row text-center justify-center gap-5",
           children: [/* @__PURE__ */ jsx(Link, {
@@ -803,7 +824,7 @@ const route6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
   __proto__: null,
   default: index
 }, Symbol.toStringTag, { value: "Module" }));
-const serverManifest = { "entry": { "module": "/assets/entry.client-DbIbukBh.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": true, "module": "/assets/root-Bwor-IsA.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js", "/assets/proxy-BYFnm-nf.js"], "css": ["/assets/root-DLmtHSMT.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/layouts/homelayout": { "id": "routes/layouts/homelayout", "parentId": "root", "path": void 0, "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": false, "module": "/assets/homelayout-D9mZhq_C.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/home/index": { "id": "routes/home/index", "parentId": "routes/layouts/homelayout", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": false, "module": "/assets/index-CeTbuKQK.js", "imports": ["/assets/index-BWUswpDg.js", "/assets/chunk-QFMPRPBF-BJ30Xfrk.js", "/assets/TwoColumnLayout-BomJgMjl.js", "/assets/proxy-BYFnm-nf.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/about/index": { "id": "routes/about/index", "parentId": "routes/layouts/homelayout", "path": "about", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": false, "module": "/assets/index-B3ZIJMGk.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js", "/assets/TwoColumnLayout-BomJgMjl.js", "/assets/proxy-BYFnm-nf.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/videos/index": { "id": "routes/videos/index", "parentId": "routes/layouts/homelayout", "path": "videos", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": false, "module": "/assets/index-DcshTFzr.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js", "/assets/TwoColumnLayout-BomJgMjl.js", "/assets/proxy-BYFnm-nf.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/show/index": { "id": "routes/show/index", "parentId": "routes/layouts/homelayout", "path": "show", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": false, "module": "/assets/index-BsFsFd8h.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js", "/assets/TwoColumnLayout-BomJgMjl.js", "/assets/proxy-BYFnm-nf.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/contact/index": { "id": "routes/contact/index", "parentId": "routes/layouts/homelayout", "path": "contact", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": false, "module": "/assets/index-DRgfKltr.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js", "/assets/TwoColumnLayout-BomJgMjl.js", "/assets/proxy-BYFnm-nf.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 } }, "url": "/assets/manifest-abaf8594.js", "version": "abaf8594", "sri": void 0 };
+const serverManifest = { "entry": { "module": "/assets/entry.client-DbIbukBh.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": true, "module": "/assets/root-Bwor-IsA.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js", "/assets/proxy-BYFnm-nf.js"], "css": ["/assets/root-DLmtHSMT.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/layouts/homelayout": { "id": "routes/layouts/homelayout", "parentId": "root", "path": void 0, "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": false, "module": "/assets/homelayout-D9mZhq_C.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/home/index": { "id": "routes/home/index", "parentId": "routes/layouts/homelayout", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": false, "module": "/assets/index-D59BpE4n.js", "imports": ["/assets/index-5u8_ps80.js", "/assets/chunk-QFMPRPBF-BJ30Xfrk.js", "/assets/TwoColumnLayout-BomJgMjl.js", "/assets/proxy-BYFnm-nf.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/about/index": { "id": "routes/about/index", "parentId": "routes/layouts/homelayout", "path": "about", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": false, "module": "/assets/index-B3ZIJMGk.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js", "/assets/TwoColumnLayout-BomJgMjl.js", "/assets/proxy-BYFnm-nf.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/videos/index": { "id": "routes/videos/index", "parentId": "routes/layouts/homelayout", "path": "videos", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": false, "module": "/assets/index-DcshTFzr.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js", "/assets/TwoColumnLayout-BomJgMjl.js", "/assets/proxy-BYFnm-nf.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/show/index": { "id": "routes/show/index", "parentId": "routes/layouts/homelayout", "path": "show", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": false, "module": "/assets/index-BsFsFd8h.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js", "/assets/TwoColumnLayout-BomJgMjl.js", "/assets/proxy-BYFnm-nf.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/contact/index": { "id": "routes/contact/index", "parentId": "routes/layouts/homelayout", "path": "contact", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasDefaultExport": true, "hasErrorBoundary": false, "module": "/assets/index-DRgfKltr.js", "imports": ["/assets/chunk-QFMPRPBF-BJ30Xfrk.js", "/assets/TwoColumnLayout-BomJgMjl.js", "/assets/proxy-BYFnm-nf.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 } }, "url": "/assets/manifest-2bd06df1.js", "version": "2bd06df1", "sri": void 0 };
 const assetsBuildDirectory = "build/client";
 const basename = "/";
 const future = { "unstable_optimizeDeps": false, "unstable_passThroughRequests": false, "unstable_subResourceIntegrity": false, "unstable_trailingSlashAwareDataRequests": false, "unstable_previewServerPrerendering": false, "v8_middleware": false, "v8_splitRouteModules": false, "v8_viteEnvironmentApi": false };
