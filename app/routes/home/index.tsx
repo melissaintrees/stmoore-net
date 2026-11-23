@@ -10,7 +10,7 @@ import BubblePic from "./../../assets/LayingInACaveSweet-Stmoore-edit.jpg";
 import { Link } from "react-router";
 import ReactPlayer from "react-player";
 import OneColumnLayout from "~/components/OneColumnLayout";
-
+import { motion } from "motion/react"
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -23,6 +23,11 @@ const HomePage = () => {
   
   return (
     <>
+         <motion.div   
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1}}
+        transition={{ duration:.7, ease: "easeIn", }}
+        >
       <ThreeColumnLayout
         backgroundColor="bg-darkblue"
         leftChildren={
@@ -231,6 +236,7 @@ const HomePage = () => {
           </>
         }
       />
+      </motion.div>
     </>
   );
 };

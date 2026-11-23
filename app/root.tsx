@@ -41,17 +41,24 @@ export function meta({}: Route.MetaArgs) {
 export function Layout({ children }: { children: React.ReactNode }) {
 
   const [isLoading, setIsLoading] = useState<boolean>(true);
-    useEffect(() => {
-    if (!isLoading) return;
 
-    // Simulate a 3-second loading delay
+  useEffect(() => {
+    // useEffect ONLY runs on the client (browser), so sessionStorage is always safe here
+    const alreadyLoaded = sessionStorage.getItem("frontPageLoaded") === "true";
+
+    if (alreadyLoaded) {
+      setIsLoading(false);
+      return; // Exit early—no timer runs
+    }
+
     const timer = setTimeout(() => {
+      sessionStorage.setItem("frontPageLoaded", "true");
       setIsLoading(false);
     }, 3000);
 
-    // Cleanup timer if the component unmounts early
     return () => clearTimeout(timer);
-  }, [isLoading]);
+  }, []);
+
 
   
 
@@ -63,16 +70,17 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body >
         {isLoading ? (
           <div className="flex items-center justify-center h-screen">
-            <Spinner />
+            <Spinner size="lg" />
           </div>
         ) : (
           <>
             <Navbar />
             <main>
             {children}
+            
           </main>
     
         <Footer />
