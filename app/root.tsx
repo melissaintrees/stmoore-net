@@ -54,7 +54,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
     const timer = setTimeout(() => {
       sessionStorage.setItem("frontPageLoaded", "true");
       setIsLoading(false);
-    }, 3000);
+    }, 5000);
 
     return () => clearTimeout(timer);
   }, []);
