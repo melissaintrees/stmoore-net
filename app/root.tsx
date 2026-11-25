@@ -40,27 +40,21 @@ export function meta({}: Route.MetaArgs) {
 
 export function Layout({ children }: { children: React.ReactNode }) {
 
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
-    // useEffect ONLY runs on the client (browser), so sessionStorage is always safe here
-    const alreadyLoaded = sessionStorage.getItem("frontPageLoaded") === "true";
+    const alreadyLoaded = localStorage.getItem("frontPageLoaded");
 
-    if (alreadyLoaded) {
+    if (!alreadyLoaded) {
+      setIsLoading(true);
+      localStorage.setItem("frontPageLoaded", "true");
+     const timer = setTimeout(() => {
+     
       setIsLoading(false);
-      return; // Exit early—no timer runs
+    }, 3000);
+      return () => clearTimeout(timer);
     }
-
-    const timer = setTimeout(() => {
-      sessionStorage.setItem("frontPageLoaded", "true");
-      setIsLoading(false);
-    }, 5000);
-
-    return () => clearTimeout(timer);
   }, []);
-
-
-  
 
   return (
     <html lang="en">
